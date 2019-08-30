@@ -15,13 +15,73 @@
 </head>
 <body>
 
+
+
 <div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            Column 1
+    <div class="row row-padder">
+        <div class="col-6">
+            <div class="box-style">
+                <div class="row no-gutters">
+                    <div class="col-3">
+                        <img class="img-style" src="file:///C:/Users/jhinshaw/Sites/jhinshawkci.github.io/assets/outline-gavel.png"/>
+                    </div>
+                    <div class="col-9">
+                        <div class="text-style">
+                            <p class="custom-title-font">Law and requirements » </p>
+                            <p class="desc-font">Learn about the Plain Writing Act, policy memos, and executive orders that require agencies to use plain language.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col">
-            Column 2
+        <div class="col-6">
+            <div class="box-style">
+                <div class="row no-gutters">
+                    <div class="col-3">
+                        <img class="img-style" src="file:///C:/Users/jhinshaw/Sites/jhinshawkci.github.io/assets/outline-pencil.png"/>
+                    </div>
+                    <div class="col-9">
+                        <div class="text-style">
+                            <p class="custom-title-font">Plain language guidelines » </p>
+                            <p class="desc-font">Official writing guidelines for understanding your audience, being clear and concise, and testing your content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row row-padder">
+            <div class="col-6">
+                <div class="box-style">
+                    <div class="row no-gutters">
+                        <div class="col-3">
+                            <img class="img-style" src="file:///C:/Users/jhinshaw/Sites/jhinshawkci.github.io/assets/outline-gradcap.png"/>
+                        </div>
+                        <div class="col-9">
+                            <div class="text-style">
+                                <p class="custom-title-font">Training » </p>
+                                <p class="desc-font">Request in-person training for your federal agency, or use our videos and materials to create your own class.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="box-style">
+                    <div class="row no-gutters">
+                        <div class="col-3">
+                            <img class="img-style" src="file:///C:/Users/jhinshaw/Sites/jhinshawkci.github.io/assets/outline-signpost.png"/>
+                        </div>
+                        <div class="col-9">
+                            <div class="text-style">
+                                <p class="custom-title-font">Examples » </p>
+                                <p class="desc-font">See plain language in action in a variety of regulations, legal documents, handbooks, and publications.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -30,20 +90,68 @@
 
 </body>
 <style>
-    
+.row-padder {
+    margin: 0 16% 0 16%;
+    padding: .30% 0 .30% 0;
+}
+
+.box-style {
+    border-color: #d5e5ed;
+    border-radius: 15px;
+	border-style: solid;
+	border-width: medium;
+    padding: 2.5% 2.5% 2.5% 2.5%;
+    margin: 2.5% .5% 2.5% .5%;
+}    
+.img-style {
+    float:right;
+    padding: 10% 5% 0 0;
+    width: 80%;
+    height: 80%;
+}
+.text-style {
+    padding: 5% 0 5% 0;
+}
 /* Media Queries */
 @media only screen and (min-width: 576px) {  
+    .box-style {
+	    background-color:#4582a1;
+    }
 
 }
 @media only screen and (min-width: 768px) {  
+    .box-style {
+        background-color: #82b2c9;
+    }
 
 }
 @media only screen and (min-width: 992px) {  
+    .box-style {
+        background-color: #c9dee8;
+    }
 
 }
 @media only screen and (min-width: 1200px) {  
-   
+    .box-style {
+        background-color: white;
+    }
+
 } 
 
+@font-face {
+    font-family: PublicSans;
+    src: url("file:///C:/Users/jhinshaw/Sites/jhinshawkci.github.io/assets/PublicSans-ExtraBold.ttf");
+}
+
+.custom-title-font {
+    font-family: "PublicSans";
+	color: #3F76A3;
+}
+.desc-style {
+    font-family: Georgia;
+}
+p {
+    margin:0;
+}
 </style>
 </html>
