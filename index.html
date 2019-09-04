@@ -31,9 +31,11 @@
        <div class="col-xs-3 col-md-3">
         <!-- Styles the icon's width, height, and float properties -->
         <div class="img-style">
+		<div class="img-style-child">
          <!-- inserts image file and inherits default responsive class from boostrap-->
          <img src="\assets\outline-gavel.png" class="img-responsive">
-        </div>
+		</div>
+	       </div>
        </div>
        <!-- Icon takes up a 3/4 of it's available row -->
        <div class="col-xs-9 col-md-9"> 
@@ -180,6 +182,10 @@
 	width: 80px;
 	height:80px;
 	float:right;
+}
+.img-style-child {
+	width:inherit;
+	height:inherit;
 }
 /* Styles title from List Item*/
 .text-style-title {
