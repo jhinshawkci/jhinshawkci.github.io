@@ -32,7 +32,7 @@
         <!-- Styles the icon's width, height, and float properties -->
         <div class="img-style">
          <!-- inserts image file and inherits default responsive class from boostrap-->
-         <img src="\assets\outline-gavel.png">
+         <img src="\assets\outline-gavel.png" class="img-responsive">
         </div> <!-- End img-style -->
        </div> <!-- End col-xs-3 col-md-3 -->
        <!-- Icon takes up a 3/4 of it's available row -->
@@ -175,14 +175,15 @@
 	padding: 5% 5% 5% 5%;
 	margin: 14px 0 14px 0;
 }
+.img {
+  width: inherit;
+}
 /* Styles image from List Item*/
 .img-style {
 	width: 80px;
 	height:80px;
 	float:right;
 }
-
-.img {max-width: 100%;}
 /* Styles title from List Item*/
 .text-style-title {
 	font-family: Cambria, sans-serif;
