@@ -384,12 +384,17 @@
 </style>
     
 <script>
+//Equal Height Columns
 $(document).ready(function(){
+    //Initialize an array to store all the height values for each element
     var heightsArray = [];
+    //For each .box-style element, store the height value within the array
     $('.box-style').each(function(){
         heightsArray.push($(this).height());
     });
+    //Initialize a variable for the biggest height (found via math.max)
     var maxHeight = Math.max.apply(null, heightsArray);
+    //Pass biggest height to .box-style elements
     $('.box-style').height(maxHeight);
 });
 </script> 
