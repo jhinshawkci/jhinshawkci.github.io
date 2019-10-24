@@ -142,12 +142,80 @@
 </div> <!-- end container -->
 </body>
 <style>
+
+@media (max-width: 575px) { 
+  .box-style {
+    padding: 20px 20px 20px 20px;
+    margin: 30px 30px 30px 30px;
+  }
+  .text-style {
+    padding-left:15px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) { 
+  .box-style {
+    padding: 20px 20px 20px 20px;
+    margin: 30px 0 0 0;
+  }
+  .box-one {
+    margin-left:15px;
+  }
+  .box-two {
+    margin-right:15px;
+  }
+  .text-style {
+    padding-left:15px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) { 
+  .box-style {
+    padding: 20px 20px 20px 20px;
+    margin: 30px 0 0 0;
+  }
+  .box-one {
+    margin-left:30px;
+  }
+  .box-two {
+    margin-right:30px;
+  }
+  .text-style {
+    padding-left:15px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) { 
+  .box-style {
+    padding: 20px 20px 20px 20px;
+    margin: 30px 0 0 0;
+  }
+  .box-one {
+    margin-left:80px;
+  }
+  .box-two {
+    margin-right:80px;
+  }
+}
+
+@media (min-width: 1200px) { 
+  .box-style {
+    padding: 20px 20px 20px 20px;
+    margin: 30px 0 0 0;
+  }
+  .box-one {
+    margin-left:250px;
+  }
+  .box-two {
+    margin-right:250px;
+  }
+}
+
 /* Styles a hover effect on content*/
 #hover-id.hover-class:hover {
   background-color: #EBF3F7 ;
   border-radius: 15px;
   cursor:pointer;
-    text-decoration: none !important;
 }
 /* Styles an on-click effect on content*/
 #hover-id.hover-class:active {
@@ -155,7 +223,6 @@
   border-radius: 15px;
   cursor:pointer;
   box-shadow: 0px 0px 5px 3px rgba(118,179,221,1);  
-    text-decoration: none !important;
 }
 /* Styles a hover effect on content*/
 #hover-id.hover-class:visited {
@@ -192,7 +259,7 @@
 </style>
     
 <script>
-//Equal Height function, .box-style is the CSS class
+//Equal Height Columns
 $(document).ready(function(){
     //Initialize an array to store all the height values for each element
     var heightsArray = [];
