@@ -199,14 +199,18 @@
 $(document).ready(function(){
     //Initialize an array to store all the height values for each element
     var heightsArray = [];
+    var widthsArray = [];
     //For each .box-style element, store the height value within the array
     $('.box-style').each(function(){
         heightsArray.push($(this).height());
+        widthsArray.push($(this).height());
     });
     //Initialize a variable for the biggest height (found via math.max)
     var maxHeight = Math.max.apply(null, heightsArray);
+    var maxWidth = Math.max.apply(null, widthsArray);
     //Pass biggest height to .box-style elements
     $('.box-style').height(maxHeight);
+    $('.box-style').width(maxHeight);
 });
 </script> 
     
