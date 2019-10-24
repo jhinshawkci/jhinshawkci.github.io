@@ -384,7 +384,7 @@
 </style>
     
 <script>
-//Equal Height/Width Columns
+//Equal Height Columns
 $(document).ready(function(){
     //Initialize an array to store all the height values for each element
     var heightsArray = [];
@@ -396,17 +396,6 @@ $(document).ready(function(){
     var maxHeight = Math.max.apply(null, heightsArray);
     //Pass biggest height to .box-style elements
     $('.box-style').height(maxHeight);
-
-    //Initialize an array to store all the width values for each element
-    var widthsArray = [];
-    //For each .box-style element, store the width value within the array
-    $('.box-style').each(function(){
-        widthsArray.push($(this).width());
-    });
-    //Initialize a variable for the biggest width (found via math.max)
-    var maxWidth = Math.max.apply(null, widthsArray);
-    //Pass biggest width to .box-style elements
-    $('.box-style').height(maxWidth);
 });
 </script> 
     
