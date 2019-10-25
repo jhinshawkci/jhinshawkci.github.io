@@ -145,29 +145,6 @@
 <!-- ######################################################################################################################################################### -->
 </body>
 <style>
-@media (max-width: 575px) { 
-
-}
-
-@media (min-width: 576px) and (max-width: 767px) { 
-
-}
-
-@media (min-width: 768px) and (max-width: 991px) { 
-
-}
-
-@media (min-width: 992px) and (max-width: 1199px) { 
-
-}
-
-@media (min-width: 1200px) { 
-  .shrink-margin {
-    margin-left:250px;
-    margin-right:250px;    
-  }
-
-}
 
 /* Styles a hover effect on content*/
 #hover-id.hover-class:hover {
@@ -224,6 +201,7 @@ $(document).resize(function(){
     //Initialize an array to store all the height values for each element
     var heightsArray = [];
     var widthsArray = [];
+
     //For each .box-style element, store the height value within the array
     $('.box-style').each(function(){
         heightsArray.push($(this).height());
@@ -235,6 +213,30 @@ $(document).resize(function(){
     //Pass biggest height to .box-style elements
     $('.box-style').height(maxHeight);
     $('.box-style').width(maxWidth);
+
+    //Equal Height/Width Columns jQuery Function
+    // #########################################################################################################################################################
+
+    //This is not necessary, finds the width of the browser window
+    var windowWidth = $(window).width();
+    var newMargin
+
+    $(".shrink-margin").each(function(){
+        if (windowWidth > 1200) {
+          newMargin = 250 
+        } else if (992 < windowWidth < 1199) {
+          newMargin = 150           
+        } else if (768 < windowWidth < 991) {
+           newMargin = 100          
+        } else if (576 < windowWidth < 767) {
+          newMargin = 50           
+        } else if (windowWidth > 575) {
+          newMargin = 0          
+        }
+    })
+
+    $(".shrink-margin").css("margin-left", newMargin);
+    $(".shrink-margin").css("margin-right", newMargin);
 });
 
 </script> 
