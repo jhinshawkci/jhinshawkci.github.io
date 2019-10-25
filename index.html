@@ -223,15 +223,15 @@ $(document).resize(function(){
 
     $(".shrink-margin").each(function(){
         if (windowWidth > 1200) {
-          $("p").html("A")
+          $("p").append("A")
         } else if (windowWidth > 1199) {
-          $("p").html("B")          
+          $("p").append("B")          
         } else if (windowWidth > 991) {
-          $("p").html("C")         
+          $("p").append("C")         
         } else if (windowWidth > 767) {
-          $("p").html("D")       
+          $("p").append("D")       
         } else if (windowWidth > 575) {
-          $("p").html("E")         
+          $("p").append("E")         
         }
     })
 
