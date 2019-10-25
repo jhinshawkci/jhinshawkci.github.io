@@ -219,24 +219,24 @@ $(document).resize(function(){
 
     //This is not necessary, finds the width of the browser window
     var windowWidth = $(window).width();
-    var newMargin = 0
+    //var newMargin = 0
 
     $(".shrink-margin").each(function(){
         if (windowWidth > 1200) {
-          newMargin = 250 
+          $("p").html("A")
         } else if (windowWidth > 1199) {
-          newMargin = 150           
+          $("p").html("B")          
         } else if (windowWidth > 991) {
-          newMargin = 100          
+          $("p").html("C")         
         } else if (windowWidth > 767) {
-          newMargin = 50           
+          $("p").html("D")       
         } else if (windowWidth > 575) {
-          newMargin = 0          
+          $("p").html("E")         
         }
     })
 
-    $(".shrink-margin").css("margin-left", newMargin);
-    $(".shrink-margin").css("margin-right", newMargin);
+    //$(".shrink-margin").css("margin-left", newMargin);
+    //$(".shrink-margin").css("margin-right", newMargin);
 });
 
 </script> 
