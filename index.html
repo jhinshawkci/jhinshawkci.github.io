@@ -23,7 +23,7 @@
 
 <div class="container-fluid">
   <div class="shrink-margin">
- <div class="row ml-5 mr-5">
+ <div class="row ml-5 mr-5" id="rowID">
   <div class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
    <!-- Styles padding, margin, and border for content -->
    <div class="box-style hover-class" id="hover-id">
@@ -45,7 +45,6 @@
          <p class="text-style-title">Google Icons »</p>
          <!-- Inserts Rich Text description from List Item -->
          <p class="text-style-desc">Icons enhance the user experience while keeping your website sharp, minimal, and mobile-friendly.</p>
-         <p class="text-style-desc" id="demo"></p>
         </div> <!-- End div for <p> elements -->
        </div> <!-- End col-xs-9 col-md-9 -->
       </div> <!-- End row -->
@@ -74,7 +73,6 @@
          <p class="text-style-title">Google Icons »</p>
          <!-- Inserts Rich Text description from List Item -->
          <p class="text-style-desc">Icons enhance the user experience while keeping your website sharp, minimal, and mobile-friendly.</p>
-         <p class="text-style-desc" id="demo"></p>
         </div> <!-- End div for <p> elements -->
        </div> <!-- End col-xs-9 col-md-9 -->
       </div> <!-- End row -->
@@ -135,7 +133,6 @@
          <p class="text-style-title">Google Icons »</p>
          <!-- Inserts Rich Text description from List Item -->
          <p class="text-style-desc">Icons enhance the user experience while keeping your website sharp, minimal, and mobile-friendly.</p>
-         <p class="text-style-desc" id="demo"></p>
         </div> <!-- End div for <p> elements -->
        </div> <!-- End col-xs-9 col-md-9 -->
       </div> <!-- End row -->
@@ -220,10 +217,10 @@ $(document).resize(function(){
 });
 
 function myFunction() {
-  var w = window.outerWidth;
-  var h = window.outerHeight;
-  var txt = "Window size: width=" + w + ", height=" + h;
-  document.getElementById("demo").innerHTML = txt;
+  var windowWidth = window.outerWidth;
+  var windowHeight = window.outerHeight;
+
+  document.getElementByClassName("shrink-margin").style.marginLeft = "250px";
 }
 
 </script> 
