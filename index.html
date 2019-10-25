@@ -219,16 +219,16 @@ $(document).resize(function(){
 
     //This is not necessary, finds the width of the browser window
     var windowWidth = $(window).width();
-    var newMargin
+    var newMargin = 0
 
     $(".shrink-margin").each(function(){
         if (windowWidth > 1200) {
           newMargin = 250 
-        } else if (992 < windowWidth < 1199) {
+        } else if (windowWidth > 1199) {
           newMargin = 150           
-        } else if (768 < windowWidth < 991) {
-           newMargin = 100          
-        } else if (576 < windowWidth < 767) {
+        } else if (windowWidth > 991) {
+          newMargin = 100          
+        } else if (windowWidth > 767) {
           newMargin = 50           
         } else if (windowWidth > 575) {
           newMargin = 0          
