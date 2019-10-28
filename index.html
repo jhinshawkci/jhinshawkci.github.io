@@ -230,22 +230,12 @@
 
 <script>
 
-var testArray = document.querySelectorAll("div.box-style");
-testArray.forEach(function(item)) {
+var matches = document.querySelectorAll(".box-style");
+matches.forEach(myFunction(item)) {
   document.getElementById("demo2").innherHTML = item;
 }
 
 
-/*
-
-var testArray = [];
-document.getElementById("demo2").innherHTML = testFunction(testArray);
-
-function testFunction (arrayObject2) {
-
-}
-
-*/
 </script> 
 
 </html>
