@@ -231,12 +231,17 @@
 <script>
 
 var boxArray = [];
-
-function myFunction() {
-  var arrayLength = document.getElementsByClassName('box-style');
-  document.innerHTML = arrayLength;
+var arrayLength = boxArray.length;
+for (var i = 0; i < arrayLength; i++) {
+    console.log(boxArray[i]);
+    
+    //Do something
 }
-
+function myFunction() {
+  var arrayLength = [];
+  //document.getElementsByClassName('box-style');
+ //document.innerHTML = arrayLength;
+}
 
 
 /*
