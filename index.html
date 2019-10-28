@@ -255,14 +255,36 @@ matchColumns=function(){
           contDivs[i].style.height=maxHeight + "px"; 
      } 
 }  
-window.addEventListener('resize', matchColumns);
 
 window.onload=function(){ 
      if(document.getElementsByTagName){ 
           matchColumns();      
      } 
 } 
+//////////////////////////////////////////////////////////
+if(window.attachEvent) {
+    window.attachEvent('onresize', matchColumns() {
+        alert('attachEvent - resize');
+    });
+}
+else if(window.addEventListener) {
+    window.addEventListener('resize', matchColumns() {
+        console.log('addEventListener - resize');
+    }, true);
+}
+else {
+    //The browser does not support Javascript event binding
+}
 
+if(window.detachEvent) {
+    window.detachEvent('onresize', matchColumns);
+}
+else if(window.removeEventListener) {
+    window.removeEventListener('resize', matchColumnsn);
+}
+else {
+    //The browser does not support Javascript event binding
+}
 </script>
 </script> 
 
