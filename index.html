@@ -133,6 +133,7 @@
          <p class="text-style-title">Google Icons »</p>
          <!-- Inserts Rich Text description from List Item -->
          <p class="text-style-desc">Icons enhance the user experience while keeping your website sharp, minimal, and mobile-friendly.</p>
+         <p class="joseph"></p>
         </div> <!-- End div for <p> elements -->
        </div> <!-- End col-xs-9 col-md-9 -->
       </div> <!-- End row -->
@@ -224,25 +225,13 @@
 <!-- ######################################################################################################################################################### -->
 
 <script>
-//jQuery
-//Equal Height/Width Columns - replace ".box-style" with the CSS class that needs equal sizing
-$(document).resize(function(){
-    //Initialize an array to store all the height values for each element
-    var heightsArray = [];
-    var widthsArray = [];
+document.getElementsByTagName("BODY")[0].onresize = function() {functionName()};
 
-    //For each .box-style element, store the height value within the array
-    $('.box-style').each(function(){
-        heightsArray.push($(this).height());
-        widthsArray.push($(this).width());
-    });
-    //Initialize a variable for the biggest height (found via math.max)
-    var maxHeight = Math.max.apply(null, heightsArray);
-    var maxWidth = Math.max.apply(null, widthsArray);
-    //Pass biggest height to .box-style elements
-    $('.box-style').height(maxHeight);
-    $('.box-style').width(maxWidth);
-});
+var x = 0;
+function functionName() {
+  var txt = x += 1;
+  document.getElementByClassName("joseph").innerHTML = txt;
+}
 
 </script> 
 
