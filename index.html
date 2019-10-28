@@ -16,6 +16,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="sameElementsHeight.min.js"></script>
 <title>Website Home</title>
 </head>
 <body id="test">
@@ -226,21 +227,8 @@
 
 <script>
 
-function equalHeights(className) {
-    var findClass = document.getElementsByClassName(boxStyle);
-    var tallest = 0; 
-  // Loop over matching divs
-  for(i = 0; i < findClass.length; i++)
-  {
-    var ele = findClass[i];
-    var eleHeight = ele.offsetHeight;
-    tallest = (eleHeight>tallest ? eleHeight : tallest); /* look up ternary operator if you dont know what this is */
-  }
-  for(i = 0; i < findClass.length; i++)
-  {
-    findClass[i].style.height = tallest + "px";
-  }
-}
+Utils.sameElementsHeight(".same-height");
+
 
 </script> 
 
