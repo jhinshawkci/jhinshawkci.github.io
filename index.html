@@ -18,7 +18,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <title>Website Home</title>
 </head>
-<body>
+<body id="test">
 <!-- ######################################################################################################################################################### -->
 
 <div class="container-fluid">
@@ -133,7 +133,7 @@
          <p class="text-style-title">Google Icons »</p>
          <!-- Inserts Rich Text description from List Item -->
          <p class="text-style-desc">Icons enhance the user experience while keeping your website sharp, minimal, and mobile-friendly.</p>
-         <p class="joseph"></p>
+         <p id="joseph"></p>
         </div> <!-- End div for <p> elements -->
        </div> <!-- End col-xs-9 col-md-9 -->
       </div> <!-- End row -->
@@ -225,12 +225,12 @@
 <!-- ######################################################################################################################################################### -->
 
 <script>
-document.getElementsByTagName("BODY")[0].onresize = function() {functionName()};
+document.getElementsById("test").onresize = function() {functionName()};
 
 var x = 0;
 function functionName() {
   var txt = x += 1;
-  document.getElementByClassName("joseph").innerHTML = txt;
+  document.getElementById("joseph").innerHTML = txt;
 }
 
 </script> 
