@@ -254,12 +254,14 @@ matchColumns=function(){
           contDivs[i].style.height=maxHeight + "px"; 
      } 
 }  
-
+/*
 window.onload=function(){ 
      if(document.getElementsByTagName){ 
-          matchColumns();      
+         matchColumns();      
      } 
 } 
+*/
+
 //////////////////////////////////////////////////////////
 if(window.attachEvent) {
     window.attachEvent('onresize', matchColumns() {
@@ -280,6 +282,31 @@ if(window.detachEvent) {
 }
 else if(window.removeEventListener) {
     window.removeEventListener('resize', matchColumns());
+}
+else {
+    //The browser does not support Javascript event binding
+}
+/////////////////////////////////////////////////////////////
+
+if(window.attachEvent) {
+    window.attachEvent('onload', matchColumns() {
+        alert('attachEvent - resize');
+    });
+}
+else if(window.addEventListener) {
+    window.addEventListener('onload', matchColumns() {
+        console.log('addEventListener - resize');
+    }, true);
+}
+else {
+    //The browser does not support Javascript event binding
+}
+
+if(window.detachEvent) {
+    window.detachEvent('onload', matchColumns());
+}
+else if(window.removeEventListener) {
+    window.removeEventListener('onload', matchColumns());
 }
 else {
     //The browser does not support Javascript event binding
