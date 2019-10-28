@@ -16,7 +16,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script src="sameElementsHeight.min.js"></script>
+
 <title>Website Home</title>
 </head>
 <body id="test">
@@ -27,7 +27,7 @@
  <div class="row ml-5 mr-5">
   <div class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
    <!-- Styles padding, margin, and border for content -->
-   <div class="boxStyle same-height hover-class" id="hover-id">
+   <div class="boxStyle hover-class" id="hover-id">
     <a href="https://material.io/resources/icons/?style=baseline">
      <!-- row wraps up the two columns, 1st column is for the icon, the 2nd column is for text -->
       <div class="row">
@@ -55,7 +55,7 @@
 
   <div class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
    <!-- Styles padding, margin, and border for content -->
-   <div class="boxStyle same-height hover-class" id="hover-id">
+   <div class="boxStyle hover-class" id="hover-id">
     <a href="https://material.io/resources/icons/?style=baseline">
      <!-- row wraps up the two columns, 1st column is for the icon, the 2nd column is for text -->
       <div class="row">
@@ -86,7 +86,7 @@
 
   <div class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
    <!-- Styles padding, margin, and border for content -->
-   <div class="boxStyle same-height hover-class" id="hover-id">
+   <div class="boxStyle hover-class" id="hover-id">
     <a href="https://material.io/resources/icons/?style=baseline">
      <!-- row wraps up the two columns, 1st column is for the icon, the 2nd column is for text -->
       <div class="row">
@@ -115,7 +115,7 @@
 
   <div class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
    <!-- Styles padding, margin, and border for content -->
-   <div class="boxStyle same-height hover-class" id="hover-id">
+   <div class="boxStyle hover-class" id="hover-id">
     <a href="https://material.io/resources/icons/?style=baseline">
      <!-- row wraps up the two columns, 1st column is for the icon, the 2nd column is for text -->
       <div class="row">
@@ -226,10 +226,36 @@
 <!-- ######################################################################################################################################################### -->
 
 <script>
-
-Utils.sameElementsHeight(".same-height");
-
-
+//<script type="text/javascript">
+matchColumns=function(){ 
+     var divs,contDivs,maxHeight,divHeight,d; 
+     divs=document.getElementsByTagName('div'); 
+     contDivs=[]; 
+     maxHeight=0;  
+     for(var i=0;i<divs.length;i++){  
+          // make collection with <div> elements with class attribute "equal"
+          if(/\bboxStyle\b/.test(divs[i].className)){ 
+                d=divs[i]; 
+                contDivs[contDivs.length]=d;  
+                if(d.offsetHeight){ 
+                     divHeight=d.offsetHeight;          
+                } 
+                else if(d.style.pixelHeight){ 
+                     divHeight=d.style.pixelHeight;          
+                } 
+                maxHeight=Math.max(maxHeight,divHeight); 
+          } 
+     } 
+     for(var i=0;i<contDivs.length;i++){ 
+          contDivs[i].style.height=maxHeight + "px"; 
+     } 
+}  
+window.onload=function(){ 
+     if(document.getElementsByTagName){ 
+          matchColumns();      
+     } 
+} 
+</script>
 </script> 
 
 </html>
