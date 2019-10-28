@@ -255,7 +255,7 @@ matchColumns=function(){
           contDivs[i].style.height=maxHeight + "px"; 
      } 
 }  
-window.onresize=matchColumns();
+window.addEventListener('resize', matchColumns);
 
 window.onload=function(){ 
      if(document.getElementsByTagName){ 
