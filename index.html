@@ -45,7 +45,7 @@
          <!-- Inserts title from List Item -->
          <p id="demo" class="text-style-title"></p>
          <!-- Inserts Rich Text description from List Item -->
-         <p class="text-style-desc">Icons enhance the user experience while keeping your website sharp, minimal, and mobile-friendly.</p>
+         <p id="demo2" class="text-style-desc"></p>
         </div> <!-- End div for <p> elements -->
        </div> <!-- End col-xs-9 col-md-9 -->
       </div> <!-- End row -->
@@ -230,14 +230,22 @@
 
 <script>
 
-  var boxArray = []; //initialize array
-  document.getElementById("demo").innerHTML = functionTypeOfDataType(boxArray); //print the output of the function
-
-function functionTypeOfDataType (arrayObject) {
-  return typeof arrayObject; 
+var testArray = document.querySelectorAll("div.box-style");
+testArray.forEach(function(item)) {
+  document.getElementById("demo2").innherHTML = item;
 }
 
 
+/*
+
+var testArray = [];
+document.getElementById("demo2").innherHTML = testFunction(testArray);
+
+function testFunction (arrayObject2) {
+
+}
+
+*/
 </script> 
 
 </html>
