@@ -19,7 +19,7 @@
 
 <title>Website Home</title>
 </head>
-<body id="test">
+<body>
 <!-- ######################################################################################################################################################### -->
 
 <div class="container-fluid">
@@ -27,7 +27,7 @@
  <div class="row ml-5 mr-5">
   <div class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
    <!-- Styles padding, margin, and border for content -->
-   <div class="boxStyle hover-class" id="hover-id">
+   <div class="box-style hover-class" id="hover-id">
     <a href="https://material.io/resources/icons/?style=baseline">
      <!-- row wraps up the two columns, 1st column is for the icon, the 2nd column is for text -->
       <div class="row">
@@ -55,7 +55,7 @@
 
   <div class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
    <!-- Styles padding, margin, and border for content -->
-   <div class="boxStyle hover-class" id="hover-id">
+   <div class="box-style hover-class" id="hover-id">
     <a href="https://material.io/resources/icons/?style=baseline">
      <!-- row wraps up the two columns, 1st column is for the icon, the 2nd column is for text -->
       <div class="row">
@@ -86,7 +86,7 @@
 
   <div class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
    <!-- Styles padding, margin, and border for content -->
-   <div class="boxStyle hover-class" id="hover-id">
+   <div class="box-style hover-class" id="hover-id">
     <a href="https://material.io/resources/icons/?style=baseline">
      <!-- row wraps up the two columns, 1st column is for the icon, the 2nd column is for text -->
       <div class="row">
@@ -115,7 +115,7 @@
 
   <div class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
    <!-- Styles padding, margin, and border for content -->
-   <div class="boxStyle hover-class" id="hover-id">
+   <div class="box-style hover-class" id="hover-id">
     <a href="https://material.io/resources/icons/?style=baseline">
      <!-- row wraps up the two columns, 1st column is for the icon, the 2nd column is for text -->
       <div class="row">
@@ -133,8 +133,7 @@
          <!-- Inserts title from List Item -->
          <p class="text-style-title">Google Icons »</p>
          <!-- Inserts Rich Text description from List Item -->
-         <p class="text-style-desc">Icons enhance the user experience while keeping your website sharp, minimal, and mobile-friendly. Added text as well to make this box slightly bigger than the rest.</p>
-         <p id="joseph"></p>
+         <p class="text-style-desc">Icons enhance the user experience while keeping your website sharp, minimal, and mobile-friendly.</p>
         </div> <!-- End div for <p> elements -->
        </div> <!-- End col-xs-9 col-md-9 -->
       </div> <!-- End row -->
@@ -195,13 +194,12 @@
     text-decoration: none !important;
 }
 /* Styles a box which contains content*/
-  .boxStyle {
+  .box-style {
   border-radius: 13px;
   border-color: #d5e5ed;
   border-style: solid;
   border-width: medium;
   margin-top: 30px;
-  overflow:display;
 }
 /* Styles image from List Item*/
 .img-style {
@@ -227,41 +225,26 @@
 <!-- ######################################################################################################################################################### -->
 
 <script>
-//<script type="text/javascript">
-matchColumns=function(){ 
-     var divs,contDivs,maxHeight,divHeight,d; 
-     divs=document.getElementsByTagName('div'); 
-     contDivs=[]; 
-     maxHeight=0;  
-     for(var i=0;i<divs.length;i++){  
-          // make collection with <div> elements with class attribute "equal"
-          if(/\bboxStyle\b/.test(divs[i].className)){ 
-                d=divs[i]; 
-                contDivs[contDivs.length]=d;  
-                if(d.offsetHeight){ 
-                     divHeight=d.offsetHeight;          
-                } 
-                else if(d.style.pixelHeight){ 
-                     divHeight=d.style.pixelHeight;          
-                } 
-                maxHeight=Math.max(maxHeight,divHeight); 
-          } 
-     } 
-     for(var i=0;i<contDivs.length;i++){ 
-          contDivs[i].style.height=maxHeight + "px"; 
-     } 
-}  
-window.onload=function(){ 
-     if(document.getElementsByTagName){ 
-          matchColumns();      
-     } 
-} 
-window.onresize=function(){ 
-     if(document.getElementsByTagName){ 
-          matchColumns();      
-     } 
-} 
-</script>
+//jQuery
+//Equal Height/Width Columns - replace ".box-style" with the CSS class that needs equal sizing
+$(document).resize(function(){
+    //Initialize an array to store all the height values for each element
+    var heightsArray = [];
+    var widthsArray = [];
+
+    //For each .box-style element, store the height value within the array
+    $('.box-style').each(function(){
+        heightsArray.push($(this).height());
+        widthsArray.push($(this).width());
+    });
+    //Initialize a variable for the biggest height (found via math.max)
+    var maxHeight = Math.max.apply(null, heightsArray);
+    var maxWidth = Math.max.apply(null, widthsArray);
+    //Pass biggest height to .box-style elements
+    $('.box-style').height(maxHeight);
+    $('.box-style').width(maxWidth);
+});
+
 </script> 
 
 </html>
