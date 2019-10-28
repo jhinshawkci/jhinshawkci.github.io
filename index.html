@@ -43,9 +43,9 @@
        <div class="col-xs-7 col-sm-9 col-md-9 col-lg-9"> 
         <div class="text-style">
          <!-- Inserts title from List Item -->
-         <p id="demo" class="text-style-title"></p>
+         <p class="text-style-title">Google Icons »</p>
          <!-- Inserts Rich Text description from List Item -->
-         <p id="demo2" class="text-style-desc"></p>
+         <p class="text-style-desc">Icons enhance the user experience while keeping your website sharp, minimal, and mobile-friendly.</p>
         </div> <!-- End div for <p> elements -->
        </div> <!-- End col-xs-9 col-md-9 -->
       </div> <!-- End row -->
@@ -207,9 +207,6 @@
   width: 70px;
   height:70px;
 }
-.text-style {
-    display:inline-block;
-}
 /* Styles title from List Item*/
 .text-style-title {
   font-family: 'Roboto', sans-serif;
@@ -229,15 +226,25 @@
 <!-- ######################################################################################################################################################### -->
 
 <script>
-
-var matches = document.querySelectorAll(".box-style");
-matches.forEach(myFunction(item)) {
-  document.getElementById("demo2").innherHTML = item;
-}
-
+//jQuery
+//Equal Height/Width Columns - replace ".box-style" with the CSS class that needs equal sizing
+$(document).resize(function(){
+    //Initialize an array to store all the height values for each element
+    var heightsArray = [];
+    var widthsArray = [];
+    //For each .box-style element, store the height value within the array
+    $('.box-style').each(function(){
+        heightsArray.push($(this).height());
+        widthsArray.push($(this).width());
+    });
+    //Initialize a variable for the biggest height (found via math.max)
+    var maxHeight = Math.max.apply(null, heightsArray);
+    var maxWidth = Math.max.apply(null, widthsArray);
+    //Pass biggest height to .box-style elements
+    $('.box-style').height(maxHeight);
+    $('.box-style').width(maxWidth);
+});
 
 </script> 
 
 </html>
-
-
