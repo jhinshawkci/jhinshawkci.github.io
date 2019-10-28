@@ -229,13 +229,10 @@
 <!-- ######################################################################################################################################################### -->
 
 <script>
-function myFunction(){ 
-  var boxArray = [];
-  //document.getElementsByClassName("box-style");
-document.getElementByID("demo").innerHTML = typeof boxArray;
+function myFunction(p1, p2) {
+  return p1 * p2;
 }
-
-
+document.getElementById("demo").innerHTML = myFunction(4, 3);
 </script> 
 
 </html>
