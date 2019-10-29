@@ -27,7 +27,7 @@
  <div class="row ml-2 mr-2">
   <div class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
    <!-- Styles padding, margin, and border for content -->
-   <div class="box-style hover-class" id="hover-id">
+   <div class="box-style-one hover-class" id="hover-id">
     <a href="https://material.io/resources/icons/?style=baseline">
      <!-- row wraps up the two columns, 1st column is for the icon, the 2nd column is for text -->
       <div class="row">
@@ -55,7 +55,7 @@
 
   <div class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
    <!-- Styles padding, margin, and border for content -->
-   <div class="box-style hover-class" id="hover-id">
+   <div class="box-style-one hover-class" id="hover-id">
     <a href="https://material.io/resources/icons/?style=baseline">
      <!-- row wraps up the two columns, 1st column is for the icon, the 2nd column is for text -->
       <div class="row">
@@ -86,7 +86,7 @@
 
   <div class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
    <!-- Styles padding, margin, and border for content -->
-   <div class="box-style hover-class" id="hover-id">
+   <div class="box-style-two hover-class" id="hover-id">
     <a href="https://material.io/resources/icons/?style=baseline">
      <!-- row wraps up the two columns, 1st column is for the icon, the 2nd column is for text -->
       <div class="row">
@@ -115,7 +115,7 @@
 
   <div class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
    <!-- Styles padding, margin, and border for content -->
-   <div class="box-style hover-class" id="hover-id">
+   <div class="box-style-two hover-class" id="hover-id">
     <a href="https://material.io/resources/icons/?style=baseline">
      <!-- row wraps up the two columns, 1st column is for the icon, the 2nd column is for text -->
       <div class="row">
@@ -214,7 +214,16 @@
     text-decoration: none !important;
 }
 /* Styles a box which contains content*/
-  .box-style {
+  .box-style-one {
+  border-radius: 13px;
+  border-color: #d5e5ed;
+  border-style: solid;
+  border-width: medium;
+  margin-top: 30px;
+  height:auto;
+}
+/* Styles a box which contains content*/
+  .box-style-two {
   border-radius: 13px;
   border-color: #d5e5ed;
   border-style: solid;
@@ -257,20 +266,11 @@ p {
 <script>
 
 //Creates an array of all ".box-style" classes
-var classArray = [].slice.call(document.querySelectorAll(".box-style"));
-console.log('Initial classArray ', classArray);
+var classArray = [].slice.call(document.querySelectorAll(".box-style-one"));
 //Initialize an array to store the heights of all .box-style classes
 var heightsArray = [];
-console.log('initial heightsArray ', heightsArray);
 //Initialize the maxHeight
 var maxHeight = "0px";
-console.log('Initial maxHeight ', maxHeight);
-/*
-// Code to show the computed height of a property
-var elem = document.getElementById("placeholder");
-var theCSSprop = window.getComputedStyle(elem, null).getPropertyValue("height");
-console.log('Computed Style ', theCSSprop);
-*/
 
 //For each item within the classArray, pass the item to findHeights() function
 classArray.forEach(findHeights);
@@ -283,87 +283,70 @@ function findHeights(value) {
   //return the heights array
   return heightsArray;
 }
-  console.log('final heights array: ', heightsArray);
 
 //For each item within the heightsArray, pass the item to findMaxHeight()
 heightsArray.forEach(findMaxHeight);
 //function to loop through each class height
 function findMaxHeight(value) {
-  console.log('findMaxHeight value ', findMaxHeight);
   //if the height is less than the maxHeight, which is "0px"
   if (value > maxHeight) {
       //the maxHeight becomes the current height
       maxHeight = value;
-      console.log('findMaxHeight iteration ', maxHeight);
     }
   //return the biggest height found on the last loop of this function
   return maxHeight;
 }
-console.log('findMaxHeight returned ', maxHeight);
-
 
 //For each item within the classArray, pass the item to matchHeight()
 classArray.forEach(matchHeight);
 //function to loop through each class
 function matchHeight(value) {
-  console.log('matchHeight value ', matchHeight);
   //change the height of the class to the maxHeight found earlier
   value.style.height = maxHeight;
-  console.log('matchHeight iteration ', value.style.height);
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/*
 //Creates an array of all ".box-style" classes
-var classArray = [].slice.call(document.querySelectorAll(".box-style"));
-console.log('Initial classArray ', classArray);
+var classArray = [].slice.call(document.querySelectorAll(".box-style-two"));
 //Initialize an array to store the heights of all .box-style classes
 var heightsArray = [];
-console.log('initial heightsArray ', heightsArray);
 //Initialize the maxHeight
 var maxHeight = "0px";
-console.log('Initial maxHeight ', maxHeight);
 
+//For each item within the classArray, pass the item to findHeights() function
 classArray.forEach(findHeights);
 //function to loop through each class
 function findHeights(value) {
-  console.log('findHeights value ', value);
-  //push the height of the element to the heightsArray
-  heightsArray.push(value.style.height);
-  //return the heightsArray, the last loop of this function will contain all heights.
+  //calculate the browser's computed height property for the class
+  var heightProperty = window.getComputedStyle(value, null).getPropertyValue("height");
+  //put this height value into the heightsArray
+  heightsArray.push(heightProperty)
+  //return the heights array
   return heightsArray;
 }
-console.log('findHeights return ', heightsArray);
-
 
 //For each item within the heightsArray, pass the item to findMaxHeight()
 heightsArray.forEach(findMaxHeight);
 //function to loop through each class height
 function findMaxHeight(value) {
-  console.log('findMaxHeight value ', findMaxHeight);
   //if the height is less than the maxHeight, which is "0px"
   if (value > maxHeight) {
       //the maxHeight becomes the current height
       maxHeight = value;
-      console.log('findMaxHeight iteration ', maxHeight);
     }
   //return the biggest height found on the last loop of this function
   return maxHeight;
 }
-console.log('findMaxHeight returned ', maxHeight);
 
 //For each item within the classArray, pass the item to matchHeight()
 classArray.forEach(matchHeight);
 //function to loop through each class
 function matchHeight(value) {
-  console.log('matchHeight value ', matchHeight);
   //change the height of the class to the maxHeight found earlier
   value.style.height = maxHeight;
-  console.log('matchHeight iteration ', value.style.height);
 }
-*/
+
 </script> 
 
 </html>
