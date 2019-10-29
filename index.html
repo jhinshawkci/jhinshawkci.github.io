@@ -27,7 +27,7 @@
  <div class="row ml-5 mr-5">
   <div class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
    <!-- Styles padding, margin, and border for content -->
-   <div class="boxStyle hover-class" id="hover-id">
+   <div class="box-style hover-class" id="hover-id">
     <a href="https://material.io/resources/icons/?style=baseline">
      <!-- row wraps up the two columns, 1st column is for the icon, the 2nd column is for text -->
       <div class="row">
@@ -55,7 +55,7 @@
 
   <div class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
    <!-- Styles padding, margin, and border for content -->
-   <div class="boxStyle hover-class" id="hover-id">
+   <div class="box-style hover-class" id="hover-id">
     <a href="https://material.io/resources/icons/?style=baseline">
      <!-- row wraps up the two columns, 1st column is for the icon, the 2nd column is for text -->
       <div class="row">
@@ -86,7 +86,7 @@
 
   <div class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
    <!-- Styles padding, margin, and border for content -->
-   <div class="boxStyle hover-class" id="hover-id">
+   <div class="box-style hover-class" id="hover-id">
     <a href="https://material.io/resources/icons/?style=baseline">
      <!-- row wraps up the two columns, 1st column is for the icon, the 2nd column is for text -->
       <div class="row">
@@ -114,7 +114,7 @@
 
   <div class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
    <!-- Styles padding, margin, and border for content -->
-   <div class="boxStyle hover-class" id="hover-id">
+   <div class="box-style hover-class" id="hover-id">
     <a href="https://material.io/resources/icons/?style=baseline">
      <!-- row wraps up the two columns, 1st column is for the icon, the 2nd column is for text -->
       <div class="row">
@@ -213,7 +213,7 @@
     text-decoration: none !important;
 }
 /* Styles a box which contains content*/
-  .boxStyle {
+  .box-style {
   border-radius: 13px;
   border-color: #d5e5ed;
   border-style: solid;
@@ -254,12 +254,52 @@ p {
 
 <script>
 
-var arrayInput = [0, 1, 2, 3];
-var arrayOutput = [];
-for (i of arrayInput){
-  arrayOutput += i + ", "; //error on last iteration
+//Creates an array of all ".box-style" classes
+var classArray = [].slice.call(document.querySelectorAll(".box-style"));
+//Initialize an array to store the heights of all .box-style classes
+var heightsArray = [];
+//Initialize the maxHeight
+var maxHeight = 0;
+
+
+//For each item within the classArray, pass the item to myFunction
+classArray.forEach(findHeights);
+//function to loop through each class
+function findHeights(value) {
+  //push the height of the element to the heightsArray
+  heightsArray.push(value.style.height);
+  //return the heightsArray, the last loop of this function will contain all heights.
+  return heightsArray;
 }
-document.getElementById("demo").innerHTML = arrayOutput;
+//Diagnostic tool only, accessible via F12 > Console
+console.log('final product ', heightsArray); //ex, ["100px, "200px", "300px", etc]
+
+
+
+//For each item within the heightsArray
+heightsArray.forEach(findMaxHeight);
+//function to loop through each class height
+function findMaxHeight(value) {
+  //if the height is less than the maxHeight, which is "0px"
+  if (value > maxHeight) {
+      //the maxHeight becomes the current height
+      maxHeight = value;
+    }
+  //return the biggest height found on the last loop of this function
+  return maxHeight;
+}
+//Diagnostic tool only, accessible via F12 > Console
+console.log('biggestHeight product ', maxHeight); // ex, "500px"
+
+
+
+//For each item within the classArray, pass the item to matchHeight
+classArray.forEach(matchHeight);
+//function to loop through each class
+function matchHeight(value) {
+  //change the height of the class to the maxHeight found earlier
+  value.style.height = maxHeight;
+}
 
 </script> 
 
