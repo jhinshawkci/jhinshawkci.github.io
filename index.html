@@ -133,7 +133,7 @@
          <!-- Inserts title from List Item -->
          <p class="text-style-title">Google Icons »</p>
          <!-- Inserts Rich Text description from List Item -->
-         <p class="text-style-desc">Icons enhance the user experience while keeping your website sharp, minimal, and mobile-friendly.</p>
+         <p class="text-style-desc">Icons enhance the user experience while keeping your website sharp, minimal, and mobile-friendly. Also, this box has slightly more text.</p>
         </div> <!-- End div for <p> elements -->
        </div> <!-- End col-xs-9 col-md-9 -->
       </div> <!-- End row -->
@@ -275,9 +275,11 @@ classArray.forEach(findHeights);
 function findHeights(value) {
   console.log('value passed ', value);
   var heightProperty = window.getComputedStyle(value, null).getPropertyValue("height");
-  console.log('Computed Style ', heightProperty);
-}
+  heightsArray.push(heightProperty)
+  return heightsArray;
 
+}
+  console.log('final heights array: ', heightsArray);
 
 /*
 //For each item within the classArray, pass the item to myFunction()
