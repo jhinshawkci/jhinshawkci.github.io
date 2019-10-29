@@ -259,7 +259,7 @@ var classArray = [].slice.call(document.querySelectorAll(".box-style"));
 //Initialize an array to store the heights of all .box-style classes
 var heightsArray = [];
 //Initialize the maxHeight
-var maxHeight = 0;
+var maxHeight = "0px";
 
 
 //For each item within the classArray, pass the item to myFunction
@@ -271,8 +271,6 @@ function findHeights(value) {
   //return the heightsArray, the last loop of this function will contain all heights.
   return heightsArray;
 }
-//Diagnostic tool only, accessible via F12 > Console
-console.log('final product ', heightsArray); //ex, ["100px, "200px", "300px", etc]
 
 
 
@@ -288,8 +286,6 @@ function findMaxHeight(value) {
   //return the biggest height found on the last loop of this function
   return maxHeight;
 }
-//Diagnostic tool only, accessible via F12 > Console
-console.log('biggestHeight product ', maxHeight); // ex, "500px"
 
 
 
