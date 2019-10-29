@@ -144,6 +144,8 @@
 </div> <!-- end shrink margin -->
 </div> <!-- container -->
 
+<p id="demo"></p>
+
 <!-- ######################################################################################################################################################### -->
 </body>
 <style>
@@ -253,90 +255,12 @@ p {
 
 <script>
 
-
-//<script type="text/javascript">
-matchColumns=function(){ 
-     var divs,contDivs,maxHeight,divHeight,d; 
-     divs=document.getElementsByTagName('div'); 
-     contDivs=[]; 
-     maxHeight=0;  
-     for(var i=0;i<divs.length;i++){  
-          // make collection with <div> elements with class attribute "equal"
-          if(/\bboxStyle\b/.test(divs[i].className)){ 
-                d=divs[i]; 
-                contDivs[contDivs.length]=d;  
-                if(d.offsetHeight){ 
-                     divHeight=d.offsetHeight;          
-                } 
-                else if(d.style.pixelHeight){ 
-                     divHeight=d.style.pixelHeight;          
-                } 
-                maxHeight=Math.max(maxHeight,divHeight); 
-          } 
-     } 
-     for(var i=0;i<contDivs.length;i++){ 
-          contDivs[i].style.height=maxHeight + "px"; 
-     } 
-}  
-/*
-window.onload=function(){ 
-     if(document.getElementsByTagName){ 
-         matchColumns();      
-     } 
-} 
-*/
-
-//////////////////////////////////////////////////////////
-if(window.attachEvent) {
-    window.attachEvent('onresize', matchColumns() {
-        alert('attachEvent - resize');
-    });
-}
-else if(window.addEventListener) {
-    window.addEventListener('resize', matchColumns() {
-        console.log('addEventListener - resize');
-    }, true);
-}
-else {
-    //The browser does not support Javascript event binding
+var array = [0, 1, 2, 3];
+for (i of array){
+  document.getElementById("demo").innerHTML = i;
 }
 
-if(window.detachEvent) {
-    window.detachEvent('onresize', matchColumns());
-}
-else if(window.removeEventListener) {
-    window.removeEventListener('resize', matchColumns());
-}
-else {
-    //The browser does not support Javascript event binding
-}
-/////////////////////////////////////////////////////////////
 
-if(window.attachEvent) {
-    window.attachEvent('onload', matchColumns() {
-        alert('attachEvent - resize');
-    });
-}
-else if(window.addEventListener) {
-    window.addEventListener('onload', matchColumns() {
-        console.log('addEventListener - resize');
-    }, true);
-}
-else {
-    //The browser does not support Javascript event binding
-}
-
-if(window.detachEvent) {
-    window.detachEvent('onload', matchColumns());
-}
-else if(window.removeEventListener) {
-    window.removeEventListener('onload', matchColumns());
-}
-else {
-    //The browser does not support Javascript event binding
-}
-
-</script>
 </script> 
 
 </html>
