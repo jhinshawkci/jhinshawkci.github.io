@@ -105,7 +105,6 @@
          <p class="text-style-title">Google Icons »</p>
          <!-- Inserts Rich Text description from List Item -->
          <p class="text-style-desc">Icons enhance the user experience while keeping your website sharp, minimal, and mobile-friendly.</p>
-         <p class="text-style-desc" id="demo"></p>
         </div> <!-- End div for <p> elements -->
        </div> <!-- End col-xs-9 col-md-9 -->
       </div> <!-- End row -->
@@ -255,11 +254,12 @@ p {
 
 <script>
 
-var array = [0, 1, 2, 3];
-for (i of array){
-  document.getElementById("demo").innerHTML = i;
+var arrayInput = [0, 1, 2, 3];
+var arrayOutput = [];
+for (i of arrayInput){
+  arrayOutput += i + ", "; //error on last iteration
 }
-
+document.getElementById("demo").innerHTML = arrayOutput;
 
 </script> 
 
