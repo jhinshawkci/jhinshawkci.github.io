@@ -256,47 +256,57 @@ p {
 
 //Creates an array of all ".box-style" classes
 var classArray = [].slice.call(document.querySelectorAll(".box-style"));
+console.log('Initial classArray ', classArray);
 //Initialize an array to store the heights of all .box-style classes
 var heightsArray = [];
+console.log('initial heightsArray ', heightsArray);
 //Initialize the maxHeight
 var maxHeight = "0px";
+console.log('Initial maxHeight ', maxHeight);
 
 
-//For each item within the classArray, pass the item to myFunction
+//For each item within the classArray, pass the item to myFunction()
 classArray.forEach(findHeights);
 //function to loop through each class
 function findHeights(value) {
+  console.log('findHeights value ', value);
   //push the height of the element to the heightsArray
   heightsArray.push(value.style.height);
   //return the heightsArray, the last loop of this function will contain all heights.
   return heightsArray;
 }
+console.log('findHeights return ', heightsArray);
 
 
 
-//For each item within the heightsArray
+//For each item within the heightsArray, pass the item to findMaxHeight()
 heightsArray.forEach(findMaxHeight);
 //function to loop through each class height
 function findMaxHeight(value) {
+  console.log('findMaxHeight value ', findMaxHeight);
   //if the height is less than the maxHeight, which is "0px"
   if (value > maxHeight) {
       //the maxHeight becomes the current height
       maxHeight = value;
+      console.log('findMaxHeight iteration ', maxHeight);
     }
   //return the biggest height found on the last loop of this function
   return maxHeight;
 }
+console.log('findMaxHeight returned ', maxHeight);
 
 
 
-//For each item within the classArray, pass the item to matchHeight
+//For each item within the classArray, pass the item to matchHeight()
 classArray.forEach(matchHeight);
 //function to loop through each class
 function matchHeight(value) {
+  console.log('matchHeight value ', matchHeight);
   //change the height of the class to the maxHeight found earlier
   value.style.height = maxHeight;
+  console.log('matchHeight iteration ', value.style.height);
 }
-
+console.log('matchHeight returned ', var);
 </script> 
 
 </html>
