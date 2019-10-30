@@ -19,7 +19,7 @@
 
 <title>Website Home</title>
 </head>
-<body onresize="matchElementHeights1();">
+<body onresize="eventHandler();">
 <!-- ######################################################################################################################################################### -->
 
 <div class="container-fluid">
@@ -451,184 +451,58 @@ function matchElementHeights1() {
   }
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//Creates an array of all ".box-style" classes
-var classArray = [].slice.call(document.querySelectorAll(".box-style-two"));
-//Initialize an array to store the heights of all .box-style classes
-var heightsArray = [];
-//Initialize the maxHeight
-var maxHeight = "0px";
-
-//For each item within the classArray, pass the item to findHeights() function
-classArray.forEach(findHeights);
-//function to loop through each class
-function findHeights(value) {
-  //calculate the browser's computed height property for the class
-  var heightProperty = window.getComputedStyle(value, null).getPropertyValue("height");
-  //put this height value into the heightsArray
-  heightsArray.push(heightProperty)
-  //return the heights array
-  return heightsArray;
-}
-
-//For each item within the heightsArray, pass the item to findMaxHeight()
-heightsArray.forEach(findMaxHeight);
-//function to loop through each class height
-function findMaxHeight(value) {
-  //if the height is less than the maxHeight, which is "0px"
-  if (value > maxHeight) {
-      //the maxHeight becomes the current height
-      maxHeight = value;
-    }
-  //return the biggest height found on the last loop of this function
-  return maxHeight;
-}
-
-//For each item within the classArray, pass the item to matchHeight()
-classArray.forEach(matchHeight);
-//function to loop through each class
-function matchHeight(value) {
-  //change the height of the class to the maxHeight found earlier
-  value.style.height = maxHeight;
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//Creates an array of all ".box-style" classes
-var classArray = [].slice.call(document.querySelectorAll(".box-style-three"));
-//Initialize an array to store the heights of all .box-style classes
-var heightsArray = [];
-//Initialize the maxHeight
-var maxHeight = "0px";
-
-//For each item within the classArray, pass the item to findHeights() function
-classArray.forEach(findHeights);
-//function to loop through each class
-function findHeights(value) {
-  //calculate the browser's computed height property for the class
-  var heightProperty = window.getComputedStyle(value, null).getPropertyValue("height");
-  //put this height value into the heightsArray
-  heightsArray.push(heightProperty)
-  //return the heights array
-  return heightsArray;
-}
-
-//For each item within the heightsArray, pass the item to findMaxHeight()
-heightsArray.forEach(findMaxHeight);
-//function to loop through each class height
-function findMaxHeight(value) {
-  //if the height is less than the maxHeight, which is "0px"
-  if (value > maxHeight) {
-      //the maxHeight becomes the current height
-      maxHeight = value;
-    }
-  //return the biggest height found on the last loop of this function
-  return maxHeight;
-}
-
-//For each item within the classArray, pass the item to matchHeight()
-classArray.forEach(matchHeight);
-//function to loop through each class
-function matchHeight(value) {
-  //change the height of the class to the maxHeight found earlier
-  value.style.height = maxHeight;
-}
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//Creates an array of all ".box-style" classes
-var classArray = [].slice.call(document.querySelectorAll(".box-style-four"));
-//Initialize an array to store the heights of all .box-style classes
-var heightsArray = [];
-//Initialize the maxHeight
-var maxHeight = "0px";
-
-//For each item within the classArray, pass the item to findHeights() function
-classArray.forEach(findHeights);
-//function to loop through each class
-function findHeights(value) {
-  //calculate the browser's computed height property for the class
-  var heightProperty = window.getComputedStyle(value, null).getPropertyValue("height");
-  //put this height value into the heightsArray
-  heightsArray.push(heightProperty)
-  //return the heights array
-  return heightsArray;
-}
-
-//For each item within the heightsArray, pass the item to findMaxHeight()
-heightsArray.forEach(findMaxHeight);
-//function to loop through each class height
-function findMaxHeight(value) {
-  //if the height is less than the maxHeight, which is "0px"
-  if (value > maxHeight) {
-      //the maxHeight becomes the current height
-      maxHeight = value;
-    }
-  //return the biggest height found on the last loop of this function
-  return maxHeight;
-}
-
-//For each item within the classArray, pass the item to matchHeight()
-classArray.forEach(matchHeight);
-//function to loop through each class
-function matchHeight(value) {
-  //change the height of the class to the maxHeight found earlier
-  value.style.height = maxHeight;
-}
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Event Handlers to resize window///////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+function eventHandler() {
+  if(window.attachEvent) {
+      window.attachEvent('onresize', matchElementHeights1() {
+          alert('attachEvent - resize');
+      });
+  }
+  else if(window.addEventListener) {
+      window.addEventListener('resize', matchElementHeights1() {
+          console.log('addEventListener - resize');
+      }, true);
+  }
+  else {
+      //The browser does not support Javascript event binding
+  }
 
-if(window.attachEvent) {
-    window.attachEvent('onresize', matchElementHeights1() {
-        alert('attachEvent - resize');
-    });
-}
-else if(window.addEventListener) {
-    window.addEventListener('resize', matchElementHeights1() {
-        console.log('addEventListener - resize');
-    }, true);
-}
-else {
-    //The browser does not support Javascript event binding
-}
+  if(window.detachEvent) {
+      window.detachEvent('onresize', matchElementHeights1());
+  }
+  else if(window.removeEventListener) {
+      window.removeEventListener('resize', matchElementHeights1());
+  }
+  else {
+      //The browser does not support Javascript event binding
+  }
+  /////////////////////////////////////////////////////////////
 
-if(window.detachEvent) {
-    window.detachEvent('onresize', matchElementHeights1());
-}
-else if(window.removeEventListener) {
-    window.removeEventListener('resize', matchElementHeights1());
-}
-else {
-    //The browser does not support Javascript event binding
-}
-/////////////////////////////////////////////////////////////
+  if(window.attachEvent) {
+      window.attachEvent('onload', matchElementHeights1() {
+          alert('attachEvent - resize');
+      });
+  }
+  else if(window.addEventListener) {
+      window.addEventListener('onload', matchElementHeights1() {
+          console.log('addEventListener - resize');
+      }, true);
+  }
+  else {
+      //The browser does not support Javascript event binding
+  }
 
-if(window.attachEvent) {
-    window.attachEvent('onload', matchElementHeights1() {
-        alert('attachEvent - resize');
-    });
-}
-else if(window.addEventListener) {
-    window.addEventListener('onload', matchElementHeights1() {
-        console.log('addEventListener - resize');
-    }, true);
-}
-else {
-    //The browser does not support Javascript event binding
-}
-
-if(window.detachEvent) {
-    window.detachEvent('onload', matchElementHeights1());
-}
-else if(window.removeEventListener) {
-    window.removeEventListener('onload', matchElementHeights1());
-}
-else {
-    //The browser does not support Javascript event binding
+  if(window.detachEvent) {
+      window.detachEvent('onload', matchElementHeights1());
+  }
+  else if(window.removeEventListener) {
+      window.removeEventListener('onload', matchElementHeights1());
+  }
+  else {
+      //The browser does not support Javascript event binding
+  }
 }
 </script> 
 
