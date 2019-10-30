@@ -589,9 +589,27 @@ if(window.attachEvent) {
     window.attachEvent('onresize', matchElementHeights1() {
         alert('attachEvent - resize');
     });
+    window.attachEvent('onresize', matchElementHeights2() {
+        alert('attachEvent - resize');
+    });
+    window.attachEvent('onresize', matchElementHeights3() {
+        alert('attachEvent - resize');
+    });
+    window.attachEvent('onresize', matchElementHeights4() {
+        alert('attachEvent - resize');
+    });
 }
 else if(window.addEventListener) {
     window.addEventListener('resize', matchElementHeights1() {
+        console.log('addEventListener - resize');
+    }, true);
+    window.addEventListener('resize', matchElementHeights2() {
+        console.log('addEventListener - resize');
+    }, true);
+    window.addEventListener('resize', matchElementHeights3() {
+        console.log('addEventListener - resize');
+    }, true);
+    window.addEventListener('resize', matchElementHeights4() {
         console.log('addEventListener - resize');
     }, true);
 }
@@ -601,9 +619,15 @@ else {
 
 if(window.detachEvent) {
     window.detachEvent('onresize', matchElementHeights1());
+    window.detachEvent('onresize', matchElementHeights2());
+    window.detachEvent('onresize', matchElementHeights3());
+    window.detachEvent('onresize', matchElementHeights4());
 }
 else if(window.removeEventListener) {
     window.removeEventListener('resize', matchElementHeights1());
+    window.removeEventListener('resize', matchElementHeights2());
+    window.removeEventListener('resize', matchElementHeights3());
+    window.removeEventListener('resize', matchElementHeights4());
 }
 else {
     //The browser does not support Javascript event binding
@@ -614,9 +638,28 @@ if(window.attachEvent) {
     window.attachEvent('onload', matchElementHeights1() {
         alert('attachEvent - resize');
     });
+    window.attachEvent('onload', matchElementHeights2() {
+        alert('attachEvent - resize');
+    });
+    window.attachEvent('onload', matchElementHeights3() {
+        alert('attachEvent - resize');
+    });
+    window.attachEvent('onload', matchElementHeights4() {
+        alert('attachEvent - resize');
+    });
+
 }
 else if(window.addEventListener) {
     window.addEventListener('onload', matchElementHeights1() {
+        console.log('addEventListener - resize');
+    }, true);
+    window.addEventListener('onload', matchElementHeights2() {
+        console.log('addEventListener - resize');
+    }, true);
+    window.addEventListener('onload', matchElementHeights3() {
+        console.log('addEventListener - resize');
+    }, true);
+    window.addEventListener('onload', matchElementHeights4() {
         console.log('addEventListener - resize');
     }, true);
 }
@@ -626,9 +669,15 @@ else {
 
 if(window.detachEvent) {
     window.detachEvent('onload', matchElementHeights1());
+    window.detachEvent('onload', matchElementHeights2());
+    window.detachEvent('onload', matchElementHeights3());
+    window.detachEvent('onload', matchElementHeights4());
 }
 else if(window.removeEventListener) {
     window.removeEventListener('onload', matchElementHeights1());
+    window.removeEventListener('onload', matchElementHeights2());
+    window.removeEventListener('onload', matchElementHeights3());
+    window.removeEventListener('onload', matchElementHeights4());
 }
 else {
     //The browser does not support Javascript event binding
