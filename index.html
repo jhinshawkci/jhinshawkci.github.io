@@ -19,7 +19,7 @@
 
 <title>Website Home</title>
 </head>
-<body onresize="eventHandler();">
+<body onresize="matchElementHeights1();">
 <!-- ######################################################################################################################################################### -->
 
 <div class="container-fluid">
@@ -73,7 +73,7 @@
          <!-- Inserts title from List Item -->
          <p class="text-style-title">Google Fonts »</p>
          <!-- Inserts Rich Text description from List Item -->
-         <p class="text-style-desc">Make your website beautiful with great typography while fixing formatting and translation issues. Here is some extra text to make this row bigger.</p>
+         <p class="text-style-desc">Make your website beautiful with great typography while fixing formatting and translation issues.</p>
         </div> <!-- End div for <p> elements -->
        </div> <!-- End col-xs-9 col-md-9 -->
       </div> <!-- End row -->
@@ -142,8 +142,7 @@
   </div> <!-- End col-xs-12 col-md-6 -->
 </div> <!-- End row -->
 </div> <!-- end shrink margin -->
-</div> <!-- container -->
-
+</div> <!-- end container -->
 
 <!-- Begin Container 2 -->
 
@@ -450,59 +449,61 @@ function matchElementHeights1() {
     value.style.height = maxHeight;
   }
 }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Copy paste code for each row, change function and class name//////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Event Handlers to resize window///////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function eventHandler() {
-  if(window.attachEvent) {
-      window.attachEvent('onresize', matchElementHeights1() {
-          alert('attachEvent - resize');
-      });
-  }
-  else if(window.addEventListener) {
-      window.addEventListener('resize', matchElementHeights1() {
-          console.log('addEventListener - resize');
-      }, true);
-  }
-  else {
-      //The browser does not support Javascript event binding
-  }
 
-  if(window.detachEvent) {
-      window.detachEvent('onresize', matchElementHeights1());
-  }
-  else if(window.removeEventListener) {
-      window.removeEventListener('resize', matchElementHeights1());
-  }
-  else {
-      //The browser does not support Javascript event binding
-  }
-  /////////////////////////////////////////////////////////////
+if(window.attachEvent) {
+    window.attachEvent('onresize', matchElementHeights1() {
+        alert('attachEvent - resize');
+    });
+}
+else if(window.addEventListener) {
+    window.addEventListener('resize', matchElementHeights1() {
+        console.log('addEventListener - resize');
+    }, true);
+}
+else {
+    //The browser does not support Javascript event binding
+}
 
-  if(window.attachEvent) {
-      window.attachEvent('onload', matchElementHeights1() {
-          alert('attachEvent - resize');
-      });
-  }
-  else if(window.addEventListener) {
-      window.addEventListener('onload', matchElementHeights1() {
-          console.log('addEventListener - resize');
-      }, true);
-  }
-  else {
-      //The browser does not support Javascript event binding
-  }
+if(window.detachEvent) {
+    window.detachEvent('onresize', matchElementHeights1());
+}
+else if(window.removeEventListener) {
+    window.removeEventListener('resize', matchElementHeights1());
+}
+else {
+    //The browser does not support Javascript event binding
+}
+/////////////////////////////////////////////////////////////
 
-  if(window.detachEvent) {
-      window.detachEvent('onload', matchElementHeights1());
-  }
-  else if(window.removeEventListener) {
-      window.removeEventListener('onload', matchElementHeights1());
-  }
-  else {
-      //The browser does not support Javascript event binding
-  }
+if(window.attachEvent) {
+    window.attachEvent('onload', matchElementHeights1() {
+        alert('attachEvent - resize');
+    });
+}
+else if(window.addEventListener) {
+    window.addEventListener('onload', matchElementHeights1() {
+        console.log('addEventListener - resize');
+    }, true);
+}
+else {
+    //The browser does not support Javascript event binding
+}
+
+if(window.detachEvent) {
+    window.detachEvent('onload', matchElementHeights1());
+}
+else if(window.removeEventListener) {
+    window.removeEventListener('onload', matchElementHeights1());
+}
+else {
+    //The browser does not support Javascript event binding
 }
 </script> 
 
