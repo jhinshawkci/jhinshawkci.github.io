@@ -19,7 +19,7 @@
 
 <title>Website Home</title>
 </head>
-<body onresize="matchElementHeights1();">
+<body>
 <!-- ######################################################################################################################################################### -->
 
 <div class="container-fluid">
@@ -408,7 +408,6 @@ p {
 <!-- ######################################################################################################################################################### -->
 
 <script>
-function matchElementHeights1() {
   //Creates an array of all ".box-style" classes
   var classArray = [].slice.call(document.querySelectorAll(".box-style-one"));
   //Initialize an array to store the heights of all .box-style classes
@@ -448,7 +447,6 @@ function matchElementHeights1() {
     //change the height of the class to the maxHeight found earlier
     value.style.height = maxHeight;
   }
-}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Copy paste code for each row, change function and class name//////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
