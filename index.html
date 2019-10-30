@@ -279,8 +279,9 @@ p {
 <!-- ######################################################################################################################################################### -->
 
 <script>
-window.onload=matchHeights();
 window.onresize=matchHeights();
+window.onload=matchHeights();
+
 function matchHeights() {
   //Creates an array of all ".box-style" classes
   var classArray = [].slice.call(document.querySelectorAll(".box-style-one"));
