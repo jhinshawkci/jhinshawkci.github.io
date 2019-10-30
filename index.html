@@ -325,7 +325,8 @@ function matchElementHeights1() {
     value.style.height = maxHeight;
   }
 }
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Copy paste code for each row, change function and class name//////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function matchElementHeights2() {
   //Creates an array of all ".box-style" classes
   var classArray = [].slice.call(document.querySelectorAll(".box-style-two"));
@@ -367,8 +368,56 @@ function matchElementHeights2() {
     value.style.height = maxHeight;
   }
 }
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Event Handlers to resize window///////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+if(window.attachEvent) {
+    window.attachEvent('onresize', matchElementHeights1() {
+        alert('attachEvent - resize');
+    });
+}
+else if(window.addEventListener) {
+    window.addEventListener('resize', matchElementHeights1() {
+        console.log('addEventListener - resize');
+    }, true);
+}
+else {
+    //The browser does not support Javascript event binding
+}
 
+if(window.detachEvent) {
+    window.detachEvent('onresize', matchElementHeights1());
+}
+else if(window.removeEventListener) {
+    window.removeEventListener('resize', matchElementHeights1());
+}
+else {
+    //The browser does not support Javascript event binding
+}
+/////////////////////////////////////////////////////////////
+
+if(window.attachEvent) {
+    window.attachEvent('onload', matchElementHeights1() {
+        alert('attachEvent - resize');
+    });
+}
+else if(window.addEventListener) {
+    window.addEventListener('onload', matchElementHeights1() {
+        console.log('addEventListener - resize');
+    }, true);
+}
+else {
+    //The browser does not support Javascript event binding
+}
+
+if(window.detachEvent) {
+    window.detachEvent('onload', matchElementHeights1());
+}
+else if(window.removeEventListener) {
+    window.removeEventListener('onload', matchElementHeights1());
+}
+else {
+    //The browser does not support Javascript event binding
+}
 </script> 
 
 </html>
