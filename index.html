@@ -280,6 +280,10 @@ p {
 
 <script>
 
+window.onresize = matchHeights();
+window.onload = matchHeights();
+
+function matchHeights() {
   //Creates an array of all ".box-style" classes
   var classArray = [].slice.call(document.querySelectorAll(".box-style-one"));
   //Initialize an array to store the heights of all .box-style classes
@@ -319,7 +323,6 @@ p {
     //change the height of the class to the maxHeight found earlier
     value.style.height = maxHeight;
   }
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Copy paste code for each row, change function and class name//////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -329,12 +332,12 @@ p {
 /*
 function eventHandler() {
   if(window.attachEvent) {
-      window.attachEvent('onresize', matchElementHeights() {
+      window.attachEvent('onresize', matchHeights() {
           alert('attachEvent - resize');
       });
   }
   else if(window.addEventListener) {
-      window.addEventListener('resize', matchElementHeights() {
+      window.addEventListener('resize', matchHeights() {
           console.log('addEventListener - resize');
       }, true);
   }
@@ -343,10 +346,10 @@ function eventHandler() {
   }
 
   if(window.detachEvent) {
-      window.detachEvent('onresize', matchElementHeights());
+      window.detachEvent('onresize', matchHeights());
   }
   else if(window.removeEventListener) {
-      window.removeEventListener('resize', matchElementHeights());
+      window.removeEventListener('resize', matchHeights());
   }
   else {
       //The browser does not support Javascript event binding
@@ -354,12 +357,12 @@ function eventHandler() {
   /////////////////////////////////////////////////////////////
 
   if(window.attachEvent) {
-      window.attachEvent('onload', matchElementHeights() {
+      window.attachEvent('onload', matchHeights() {
           alert('attachEvent - resize');
       });
   }
   else if(window.addEventListener) {
-      window.addEventListener('onload', matchElementHeights() {
+      window.addEventListener('onload', matchHeights() {
           console.log('addEventListener - resize');
       }, true);
   }
@@ -368,10 +371,10 @@ function eventHandler() {
   }
 
   if(window.detachEvent) {
-      window.detachEvent('onload', matchElementHeights());
+      window.detachEvent('onload', matchHeights());
   }
   else if(window.removeEventListener) {
-      window.removeEventListener('onload', matchElementHeights());
+      window.removeEventListener('onload', matchHeights());
   }
   else {
       //The browser does not support Javascript event binding
