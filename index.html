@@ -19,7 +19,7 @@
 
 <title>Website Home</title>
 </head>
-<body onresize="matchElementHeights()">
+<body>
 <!-- ######################################################################################################################################################### -->
 
 <div class="container-fluid">
@@ -279,7 +279,7 @@ p {
 <!-- ######################################################################################################################################################### -->
 
 <script>
-function matchElementHeights() {
+
   //Creates an array of all ".box-style" classes
   var classArray = [].slice.call(document.querySelectorAll(".box-style-one"));
   //Initialize an array to store the heights of all .box-style classes
@@ -319,14 +319,14 @@ function matchElementHeights() {
     //change the height of the class to the maxHeight found earlier
     value.style.height = maxHeight;
   }
-}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Copy paste code for each row, change function and class name//////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Event Handlers to resize window///////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+/*
 
 if(window.attachEvent) {
     window.attachEvent('onresize', matchElementHeights() {
@@ -376,7 +376,7 @@ else if(window.removeEventListener) {
 else {
     //The browser does not support Javascript event binding
 }
-
+*/
 </script> 
 
 </html>
