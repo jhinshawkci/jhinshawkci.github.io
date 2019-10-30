@@ -19,7 +19,7 @@
 
 <title>Website Home</title>
 </head>
-<body>
+<body onresize="matchHeights()">
 <!-- ######################################################################################################################################################### -->
 
 <div class="container-fluid">
@@ -279,7 +279,8 @@ p {
 <!-- ######################################################################################################################################################### -->
 
 <script>
-window.onresize=matchHeights();
+
+//runs matchHeights() function when the page loads
 window.onload=matchHeights();
 
 function matchHeights() {
