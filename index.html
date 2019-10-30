@@ -19,7 +19,7 @@
 
 <title>Website Home</title>
 </head>
-<body onload="matchElementHeights()" onresize="matchElementHeights()">
+<body onresize="eventHandler()">
 <!-- ######################################################################################################################################################### -->
 
 <div class="container-fluid">
@@ -326,57 +326,56 @@ function matchElementHeights() {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Event Handlers to resize window///////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/*
+function eventHandler() {
+  if(window.attachEvent) {
+      window.attachEvent('onresize', matchElementHeights() {
+          alert('attachEvent - resize');
+      });
+  }
+  else if(window.addEventListener) {
+      window.addEventListener('resize', matchElementHeights() {
+          console.log('addEventListener - resize');
+      }, true);
+  }
+  else {
+      //The browser does not support Javascript event binding
+  }
 
-if(window.attachEvent) {
-    window.attachEvent('onresize', matchElementHeights() {
-        alert('attachEvent - resize');
-    });
-}
-else if(window.addEventListener) {
-    window.addEventListener('resize', matchElementHeights() {
-        console.log('addEventListener - resize');
-    }, true);
-}
-else {
-    //The browser does not support Javascript event binding
-}
+  if(window.detachEvent) {
+      window.detachEvent('onresize', matchElementHeights());
+  }
+  else if(window.removeEventListener) {
+      window.removeEventListener('resize', matchElementHeights());
+  }
+  else {
+      //The browser does not support Javascript event binding
+  }
+  /////////////////////////////////////////////////////////////
 
-if(window.detachEvent) {
-    window.detachEvent('onresize', matchElementHeights());
-}
-else if(window.removeEventListener) {
-    window.removeEventListener('resize', matchElementHeights());
-}
-else {
-    //The browser does not support Javascript event binding
-}
-/////////////////////////////////////////////////////////////
+  if(window.attachEvent) {
+      window.attachEvent('onload', matchElementHeights() {
+          alert('attachEvent - resize');
+      });
+  }
+  else if(window.addEventListener) {
+      window.addEventListener('onload', matchElementHeights() {
+          console.log('addEventListener - resize');
+      }, true);
+  }
+  else {
+      //The browser does not support Javascript event binding
+  }
 
-if(window.attachEvent) {
-    window.attachEvent('onload', matchElementHeights() {
-        alert('attachEvent - resize');
-    });
+  if(window.detachEvent) {
+      window.detachEvent('onload', matchElementHeights());
+  }
+  else if(window.removeEventListener) {
+      window.removeEventListener('onload', matchElementHeights());
+  }
+  else {
+      //The browser does not support Javascript event binding
+  }
 }
-else if(window.addEventListener) {
-    window.addEventListener('onload', matchElementHeights() {
-        console.log('addEventListener - resize');
-    }, true);
-}
-else {
-    //The browser does not support Javascript event binding
-}
-
-if(window.detachEvent) {
-    window.detachEvent('onload', matchElementHeights());
-}
-else if(window.removeEventListener) {
-    window.removeEventListener('onload', matchElementHeights());
-}
-else {
-    //The browser does not support Javascript event binding
-}
-*/
 </script> 
 
 </html>
