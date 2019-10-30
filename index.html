@@ -279,7 +279,7 @@ p {
 <!-- ######################################################################################################################################################### -->
 
 <script>
-function matchElementHeights1() {
+function matchElementHeights() {
   //Creates an array of all ".box-style" classes
   var classArray = [].slice.call(document.querySelectorAll(".box-style-one"));
   //Initialize an array to store the heights of all .box-style classes
@@ -329,12 +329,12 @@ function matchElementHeights1() {
 
 
 if(window.attachEvent) {
-    window.attachEvent('onresize', matchElementHeights1() {
+    window.attachEvent('onresize', matchElementHeights() {
         alert('attachEvent - resize');
     });
 }
 else if(window.addEventListener) {
-    window.addEventListener('resize', matchElementHeights1() {
+    window.addEventListener('resize', matchElementHeights() {
         console.log('addEventListener - resize');
     }, true);
 }
@@ -343,10 +343,10 @@ else {
 }
 
 if(window.detachEvent) {
-    window.detachEvent('onresize', matchElementHeights1());
+    window.detachEvent('onresize', matchElementHeights());
 }
 else if(window.removeEventListener) {
-    window.removeEventListener('resize', matchElementHeights1());
+    window.removeEventListener('resize', matchElementHeights());
 }
 else {
     //The browser does not support Javascript event binding
@@ -354,12 +354,12 @@ else {
 /////////////////////////////////////////////////////////////
 
 if(window.attachEvent) {
-    window.attachEvent('onload', matchElementHeights1() {
+    window.attachEvent('onload', matchElementHeights() {
         alert('attachEvent - resize');
     });
 }
 else if(window.addEventListener) {
-    window.addEventListener('onload', matchElementHeights1() {
+    window.addEventListener('onload', matchElementHeights() {
         console.log('addEventListener - resize');
     }, true);
 }
@@ -368,10 +368,10 @@ else {
 }
 
 if(window.detachEvent) {
-    window.detachEvent('onload', matchElementHeights1());
+    window.detachEvent('onload', matchElementHeights());
 }
 else if(window.removeEventListener) {
-    window.removeEventListener('onload', matchElementHeights1());
+    window.removeEventListener('onload', matchElementHeights());
 }
 else {
     //The browser does not support Javascript event binding
