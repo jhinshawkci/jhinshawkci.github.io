@@ -281,7 +281,9 @@ p {
 <script>
 
 //runs matchHeights() function when the page loads
+//window.onload = matchHeights; //works
 //window.onload = matchHeights(); //works
+//window.addEventListener('load', matchHeights()); //works
 //window.addEventListener('load', matchHeights(), false); //works
 
 function matchHeights() {
@@ -325,8 +327,8 @@ function matchHeights() {
     value.style.height = maxHeight;
   }
 }
-window.onresize = matchHeights;
-window.onload = matchHeights;
+window.onresize = window.onload = matchHeights;
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Copy paste code for each row, change function and class name//////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
