@@ -280,8 +280,8 @@ p {
 
 <script>
 
-//runs matchHeights() function when the page loads
-window.onload = matchHeights();
+//runs matchHeights() function when the page loads, will override listeners
+//window.onload = matchHeights();
 
 function matchHeights() {
   //Creates an array of all ".box-style" classes
@@ -330,8 +330,8 @@ function matchHeights() {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Event Handlers to resize window///////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-window.addEventListener('resize', matchHeights(), true);
-window.addEventListener('onresize', matchHeights(), true);
+window.addEventListener('load', matchHeights(), false);
+window.addEventListener('onload', matchHeights(), false);
 /*
 function eventHandler() {
   if(window.attachEvent) {
