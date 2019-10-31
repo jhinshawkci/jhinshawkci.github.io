@@ -283,8 +283,11 @@ p {
 //runs matchHeights() function when the page loads
 window.onload = matchHeights();
 
-console.log("window.onload ", window.onload);
-console.log("matchHeights() ", matchHeights());
+var a = window.onload;
+var b = matchHeights();
+
+console.log("window.onload ", a);
+console.log("matchHeights() ", b);
 
 function matchHeights() {
   //Creates an array of all ".box-style" classes
