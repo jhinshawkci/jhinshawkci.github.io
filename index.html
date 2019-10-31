@@ -279,10 +279,10 @@ p {
 <!-- ######################################################################################################################################################### -->
 
 <script>
-window.addEventListener('resize', eventHandler, true);
+window.addEventListener('resize', matchHeights, true);
 
 //runs matchHeights() function when the page loads
-window.onload=matchHeights();
+window.onload = matchHeights();
 
 function matchHeights() {
   //Creates an array of all ".box-style" classes
