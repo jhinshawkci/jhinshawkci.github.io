@@ -280,8 +280,8 @@ p {
 
 <script>
 
-//runs matchHeights() function when the page loads, will override listeners
-//window.onload = matchHeights();
+//runs matchHeights() function when the page loads
+// window.onload = matchHeights();
 
 function matchHeights() {
   //Creates an array of all ".box-style" classes
@@ -301,9 +301,9 @@ function matchHeights() {
     heightsArray.push(heightProperty)
     //return the heights array
     return heightsArray;
-  }
+  } //example: heightsArray = [25px, 30px, 50px, etc...];
 
-  //For each item within the heightsArray, pass the item to findMaxHeight()
+  //For each item within the heightsArray, pass the item to findMaxHeight() function
   heightsArray.forEach(findMaxHeight);
   //function to loop through each class height
   function findMaxHeight(value) {
@@ -314,9 +314,9 @@ function matchHeights() {
       }
     //return the biggest height found on the last loop of this function
     return maxHeight;
-  }
+  } //example: maxHeight = 50px;
 
-  //For each item within the classArray, pass the item to matchHeight()
+  //For each item within the classArray, pass the item to matchHeight() function
   classArray.forEach(matchHeight);
   //function to loop through each class
   function matchHeight(value) {
@@ -330,8 +330,13 @@ function matchHeights() {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Event Handlers to resize window///////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* // This code works for onload
 window.addEventListener('onresize', matchHeights(), false); //doesn't work?
 window.addEventListener('load', matchHeights(), false);
+*/
+
 /*
 function eventHandler() {
   if(window.attachEvent) {
