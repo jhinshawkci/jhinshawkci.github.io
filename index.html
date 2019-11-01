@@ -282,9 +282,13 @@ p {
 
 //runs matchHeights() function when the page loads
 //window.onload = matchHeights; //works
+//Other methods that also do the same thing as above:
 //window.onload = matchHeights(); //works
 //window.addEventListener('load', matchHeights()); //works
 //window.addEventListener('load', matchHeights(), false); //works
+window.addEventListener('load', function() {
+  matchHeights(); 
+}); //testing
 
 function matchHeights() {
   //Creates an array of all ".box-style" classes
@@ -328,13 +332,28 @@ function matchHeights() {
   }
 }
 
+/*
+//Doesnt work
 window.addEventListener('onload', myFunction() {
   matchHeights();
 }, false);
 /*
-window.addEventListener('onresize', myFunction() {
+
+//Doesnt work
+window.addEventListener('onload', myFunction() {
   matchHeights();
-});
+}, true);
+
+//Doesnt work
+window.addEventListener('load', myFunction() {
+  matchHeights();
+}, true);
+
+//Doesnt work
+window.addEventListener('load', myFunction() {
+  matchHeights();
+}, true);
+
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Copy paste code for each row, change function and class name//////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
