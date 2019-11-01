@@ -333,12 +333,14 @@ function matchHeights() {
 }
 
 
-window.addEventListener('onresize', function() {
+window.addEventListener('resize', function() {
   matchHeights(); 
+    console.log('page is fully resized');
 }); //testing
 
 window.addEventListener('load', function() {
   matchHeights(); 
+    console.log('page is fully loaded');
 }); //works
 
 
