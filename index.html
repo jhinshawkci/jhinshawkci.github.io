@@ -287,13 +287,6 @@ p {
 //window.addEventListener('load', matchHeights()); //works
 //window.addEventListener('load', matchHeights(), false); //works
 
-window.addEventListener('resize', function() {
-  matchHeights(); 
-}); //testing
-
-window.addEventListener('load', function() {
-  matchHeights(); 
-}); //works
 
 
 
@@ -338,6 +331,16 @@ function matchHeights() {
     value.style.height = maxHeight;
   }
 }
+
+
+window.addEventListener('resize', function() {
+  matchHeights(); 
+}); //testing
+
+window.addEventListener('load', function() {
+  matchHeights(); 
+}); //works
+
 
 /*
 //Doesnt work
