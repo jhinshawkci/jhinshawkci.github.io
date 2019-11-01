@@ -287,13 +287,15 @@ p {
 //window.addEventListener('load', matchHeights()); //works
 //window.addEventListener('load', matchHeights(), false); //works
 
+window.addEventListener('resize', function() {
+  matchHeights(); 
+}); //testing
+
 window.addEventListener('load', function() {
   matchHeights(); 
 }); //works
 
-window.addEventListener('resize', function() {
-  matchHeights(); 
-}); //works
+
 
 function matchHeights() {
   //Creates an array of all ".box-style" classes
