@@ -332,7 +332,9 @@ function matchHeights() {
 
 
 var eventList = ["resize", "load"];
+console.log("Event list: ", eventList);
 for(event of eventList) {
+  console.log("iteration: ", event);
     window.addEventListener(event, function() {
       matchHeights(); 
     });
