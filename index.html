@@ -23,6 +23,15 @@
 <!-- ######################################################################################################################################################### -->
 
 <div class="container-fluid">
+  <div class="banner-style">Stuff</div>
+</div>
+
+
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+                                           <!-- 1st container below-->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+<div class="container-fluid">
   <div class="shrink-margin">
  <div class="row">
   <div class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
@@ -83,7 +92,6 @@
  </div> <!-- End row -->
 
  <!-- 2nd row for container -->
-
   <div class="row">
    <div class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
     <!-- Styles padding, margin, and border for cbox-style-one hover-classontent -->
@@ -143,8 +151,9 @@
  </div> <!-- End row -->
 </div> <!-- end shrink margin -->
 </div> <!-- end container -->
-
-<!-- 2nd container -->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+                                           <!-- 2nd container below-->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 <div class="container-fluid">
   <div class="shrink-margin">
@@ -204,7 +213,6 @@
      </div> <!-- End box style -->
   </div> <!-- End col-xs-12 col-md-6 -->
  </div> <!-- End row -->
-
 
  <!-- 2nd row for container -->
   <div class="row">
@@ -322,13 +330,13 @@
 }
 /* Styles a hover effect on content*/
 #hover-id.hover-class:hover {
-  background-color: #EBF3F7 ;
+  background-color: #EBF3F7;
   border-radius: 15px;
   cursor:pointer;
 }
 /* Styles an on-click effect on content*/
 #hover-id.hover-class:active {
-  background-color: #EBF3F7 ;
+  background-color: #EBF3F7;
   border-radius: 15px;
   cursor:pointer;
   box-shadow: 0px 0px 5px 3px rgba(118,179,221,1);  
@@ -400,6 +408,11 @@
 p {
     margin: 0px 0px 0px 0px;
 }
+
+.banner-style {
+  background-color: #EBF3F7
+}
+
 </style>
  
 <!-- ######################################################################################################################################################### -->
@@ -422,49 +435,43 @@ $(document).resize(function(){
     //Pass biggest height to .box-style elements
     $('.box-style-one').height(maxHeight);
     $('.box-style-one').width(maxWidth);
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //Initialize an array to store all the height values for each element
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//        Repeat jQuery code for each row - in this case this is for row 2
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     var heightsArray2 = [];
     var widthsArray2 = [];
-    //For each .box-style element, store the height value within the array
     $('.box-style-two').each(function(){
         heightsArray2.push($(this).height());
         widthsArray2.push($(this).width());
     });
-    //Initialize a variable for the biggest height (found via math.max)
     var maxHeight2 = Math.max.apply(null, heightsArray2);
     var maxWidth2 = Math.max.apply(null, widthsArray2);
-    //Pass biggest height to .box-style elements
     $('.box-style-two').height(maxHeight2);
     $('.box-style-two').width(maxWidth2);
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //Initialize an array to store all the height values for each element
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//        Repeat jQuery code for each row - in this case this is for row 3
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     var heightsArray3 = [];
     var widthsArray3 = [];
-    //For each .box-style element, store the height value within the array
     $('.box-style-three').each(function(){
         heightsArray3.push($(this).height());
         widthsArray3.push($(this).width());
     });
-    //Initialize a variable for the biggest height (found via math.max)
     var maxHeight3 = Math.max.apply(null, heightsArray3);
     var maxWidth3 = Math.max.apply(null, widthsArray3);
-    //Pass biggest height to .box-style elements
     $('.box-style-three').height(maxHeight3);
     $('.box-style-three').width(maxWidth3);
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //Initialize an array to store all the height values for each element
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//        Repeat jQuery code for each row - in this case this is for row 4
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     var heightsArray4 = [];
     var widthsArray4 = [];
-    //For each .box-style element, store the height value within the array
     $('.box-style-four').each(function(){
         heightsArray4.push($(this).height());
         widthsArray4.push($(this).width());
     });
-    //Initialize a variable for the biggest height (found via math.max)
     var maxHeight4 = Math.max.apply(null, heightsArray4);
     var maxWidth4 = Math.max.apply(null, widthsArray4);
-    //Pass biggest height to .box-style elements
     $('.box-style-four').height(maxHeight4);
     $('.box-style-four').width(maxWidth4);
 });
