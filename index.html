@@ -330,18 +330,21 @@ function matchHeights() {
   }
 }
 
+window.addEventListener("load", function _listener() {
+  matchHeights();
+  window.removeEventListener("load", _listener, true);
+}, true);
 
+/////////////////////////////////////////////////
+/*
 var eventList = ["resize", "load"];
-console.log("Event list: ", eventList);
 for(event of eventList) {
-  console.log("iteration: ", event);
     window.addEventListener(event, function() {
       matchHeights(); 
     });
 }
-
-
-
+*/
+//////////////////////////////////////////////
 /*
 window.addEventListener('resize', function() {
   matchHeights(); 
