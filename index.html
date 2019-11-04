@@ -331,13 +331,24 @@ function matchHeights() {
 }
 
 
+['resize', 'load'].forEach(type => {
+  if (type === 'resize') {
+    window.addEventListener(type, matchHeights() => console.log('resize'));
+  }
+        else if (type === 'load') {
+                window.addEventListener(type, matchHeights() => console.log('onload'));
+        }
+});
+
+/*
 var eventList = ["resize", "load"];
 for(event of eventList) {
     window.addEventListener(event, function() {
       matchHeights(); 
-        console.log("you inserted things by paste or typing etc.");
     });
 }
+*/
+
 
 /*
 window.addEventListener('resize', function() {
@@ -353,32 +364,6 @@ window.addEventListener('load', function() {
 */
 
 
-
-
-
-/*
-//Doesnt work
-window.addEventListener('onload', myFunction() {
-  matchHeights();
-}, false);
-/*
-
-//Doesnt work
-window.addEventListener('onload', myFunction() {
-  matchHeights();
-}, true);
-
-//Doesnt work
-window.addEventListener('load', myFunction() {
-  matchHeights();
-}, true);
-
-//Doesnt work
-window.addEventListener('load', myFunction() {
-  matchHeights();
-}, true);
-
-*/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Copy paste code for each row, change function and class name//////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
