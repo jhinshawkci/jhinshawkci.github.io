@@ -331,17 +331,30 @@ function matchHeights() {
 }
 
 
+var eventList = ["resize", "load"];
+for(event of eventList) {
+    element.addEventListener(event, function() {
+      matchHeights(); 
+        console.log("you inserted things by paste or typing etc.");
+    });
+}
+
+/*
 window.addEventListener('resize', function() {
   matchHeights(); 
     console.log('page is fully resized');
 }); //seems to show up within console log, but does run the function when resizing.
 
-/*
+
 window.addEventListener('load', function() {
   matchHeights(); 
     console.log('page is fully loaded');
 }); //works
 */
+
+
+
+
 
 /*
 //Doesnt work
