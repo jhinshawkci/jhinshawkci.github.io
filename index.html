@@ -288,8 +288,6 @@ p {
 //window.addEventListener('load', matchHeights(), false); //works
 
 
-
-
 function matchHeights() {
   //Creates an array of all ".box-style" classes
   var classArray = [].slice.call(document.querySelectorAll(".box-style-one"));
@@ -336,13 +334,14 @@ function matchHeights() {
 window.addEventListener('resize', function() {
   matchHeights(); 
     console.log('page is fully resized');
-}); //testing
+}); //seems to show up within console log, but does run the function when resizing.
 
+/*
 window.addEventListener('load', function() {
   matchHeights(); 
     console.log('page is fully loaded');
 }); //works
-
+*/
 
 /*
 //Doesnt work
