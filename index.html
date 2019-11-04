@@ -332,10 +332,10 @@ function matchHeights() {
 
 
 ['resize', 'load'].forEach(type => {
-  if (type === 'resize') {
+  if (type === 'load') {
     window.addEventListener(type, matchHeights() => console.log('resize'));
   }
-        else if (type === 'load') {
+        else if (type === 'resize') {
                 window.addEventListener(type, matchHeights() => console.log('onload'));
         }
 });
