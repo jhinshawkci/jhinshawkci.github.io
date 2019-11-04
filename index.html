@@ -417,6 +417,51 @@ $(document).resize(function(){
     //Pass biggest height to .box-style elements
     $('.box-style-one').height(maxHeight);
     $('.box-style-one').width(maxWidth);
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //Initialize an array to store all the height values for each element
+    var heightsArray2 = [];
+    var widthsArray2 = [];
+    //For each .box-style element, store the height value within the array
+    $('.box-style-two').each(function(){
+        heightsArray2.push($(this).height());
+        widthsArray2.push($(this).width());
+    });
+    //Initialize a variable for the biggest height (found via math.max)
+    var maxHeight2 = Math.max.apply(null, heightsArray2);
+    var maxWidth2 = Math.max.apply(null, widthsArray2);
+    //Pass biggest height to .box-style elements
+    $('.box-style-two').height(maxHeight2);
+    $('.box-style-two').width(maxWidth2);
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //Initialize an array to store all the height values for each element
+    var heightsArray3 = [];
+    var widthsArray3 = [];
+    //For each .box-style element, store the height value within the array
+    $('.box-style-three').each(function(){
+        heightsArray3.push($(this).height());
+        widthsArray3.push($(this).width());
+    });
+    //Initialize a variable for the biggest height (found via math.max)
+    var maxHeight3 = Math.max.apply(null, heightsArray3);
+    var maxWidth3 = Math.max.apply(null, widthsArray3);
+    //Pass biggest height to .box-style elements
+    $('.box-style-three').height(maxHeight3);
+    $('.box-style-three').width(maxWidth3);
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //Initialize an array to store all the height values for each element
+    var heightsArray4 = [];
+    var widthsArray4 = [];
+    //For each .box-style element, store the height value within the array
+    $('.box-style-four').each(function(){
+        heightsArray4.push($(this).height());
+        widthsArray4.push($(this).width());
+    });
+    //Initialize a variable for the biggest height (found via math.max)
+    var maxHeight4 = Math.max.apply(null, heightsArray4);
+    var maxWidth4 = Math.max.apply(null, widthsArray4);
+    //Pass biggest height to .box-style elements
+    $('.box-style-four').height(maxHeight4);
+    $('.box-style-four').width(maxWidth4);
 });
 
 </script> 
