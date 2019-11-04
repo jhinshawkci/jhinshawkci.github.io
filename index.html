@@ -330,20 +330,20 @@ function matchHeights() {
   }
 }
 
-window.addEventListener("load", function _listener() {
+window.addEventListener("resize", function _listener() {
   matchHeights();
-  window.removeEventListener("load", _listener, true);
+  window.removeEventListener("resize", _listener, true);
 }, true);
 
 /////////////////////////////////////////////////
-/*
+
 var eventList = ["resize", "load"];
 for(event of eventList) {
     window.addEventListener(event, function() {
       matchHeights(); 
     });
 }
-*/
+
 //////////////////////////////////////////////
 /*
 window.addEventListener('resize', function() {
