@@ -1,8 +1,82 @@
 <!DOCTYPE html>
 <html>
-<body>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Reference to 3rd-party Icons-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<!-- Reference to 3rd-Party Multi-Script Font -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;0,600;0,700;1,500;1,700&display=swap" rel="stylesheet">
 
-<button type="button">Click Me!</button>
- 
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<style>
+body {
+	font-family: 'Roboto Mono', monospace;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+}
+
+</style>
+
+<!-- Website Background Color-->
+<body>
+	<button type="button" onclick="RetrieveRandomMachines()">Click Me!</button>
+<div class="grid">
+  <div class="grid-item"><p id="Kick"></p></div>
+  <div class="grid-item"><p id="Snare"></p></div>
+  <div class="grid-item"><p id="Metal"></p></div>
+  <div class="grid-item"><p id="Perc"></p></div>
+  <div class="grid-item"><p id="Tone"></p></div>
+  <div class="grid-item"><p id="Chord"></p></div>
+</div>
 </body>
+<script>
+
+function RetrieveRandomMachines() {
+	document.getElementById("Kick").innerHTML = Kick; 
+	document.getElementById("Snare").innerHTML = Snare; 
+	document.getElementById("Metal").innerHTML = Metal; 
+	document.getElementById("Perc").innerHTML = Perc;
+	document.getElementById("Tone").innerHTML = Tone; 
+	document.getElementById("Chord").innerHTML = Chord;
+}
+
+var TableKick = [
+	'BD ACD01', 'BD ANGER', 'BD BASIC', 'BD BEAR', 'BD BIG BO', 'BD BITTER', 'BD BLAM', 'BD BLUE', 'BD BOLD', 'BD BONK', 'BD BOOM', 'BD BRASS', 'BD CARE4U', 'BD CHAND', 'BD CHONKR', 'BD DB', 'BD DEEEEP', 'BD DEEP2', 'BD DETH', 'BD DIKKE', 'BD DREUN', 'BD DUBMAN', 'BD DUSTY', 'BD FAR', 'BD FIZZY', 'BD FJONG', 'BD GABBER', 'BD GABERT', 'BD GABSLY', 'BD GRIDLO', 'BD HARD', 'BD HARDAS', 'BD HARRD', 'BD HEAVY', 'BD HERD', 'BD J_TECH', 'BD LATCH', 'BD LEAN', 'BD LRG', 'BD MELLOW', 'BD METO', 'BD NEPAL', 'BD NERF', 'BD OLDIE', 'BD OVER 9', 'BD PLANK', 'BD PLAST', 'BD RIGHT', 'BD ROOOM', 'BD RUBBER', 'BD RULER', 'BD SAND', 'BD SIMPLE', 'BD SJAAK', 'BD SMAP', 'BD SOFTI', 'BD STRR', 'BD STIFF', 'BD STONK', 'BD SYNTH', 'BD THICC', 'BD THUMP', 'BC THUNDA', 'BD TIGHT', 'BD TINK', 'BD UPF', 'BD WUBWUB', 'BD ZAZZY', 'CP DAB', 'FX KNORZ', 'FX SIREN', 'HH HIQUP', 'PC DUNK', 'PC TANGS', 'PC ZAP', 'PC ZAPP', 'SY BASS++', 'SY NOISER', 'SY R32BAS', 'SY SCAR', 'SY WAVEY', 'TO XOXO'
+];
+var TableSnare = [
+	'CP AFT', 'CP AMB', 'CP CLEAN', 'FX LAYE', 'FX PERX', 'FX RAWK', 'HH CLACKE', 'PC COWBERL', 'PC GOLD', 'PC RISE', 'PC TOONG', 'PC TRIX', 'RS CLIK', 'SD 8-BIT', 'SD ALAN', 'SD ALIENZ', 'SD AVIG', 'SD BAP', 'SD BLIP', 'SD BOLD', 'SD BRESH', 'SD COMP', 'SD CRIQ', 'SD DAMON', 'SD DIMM', 'SD DOF', 'SD DRUMST', 'SD EAGLE', 'SD ENTER', 'SD FLATST', 'SD FLIPP', 'SD FLUTTR', 'SD GATE', 'SD GRISTL', 'SD HORN', 'SD KISH', 'SD KISS', 'SD LAZR', 'SD LETRIC', 'SD MELLO', 'SD METAL', 'SD NORMA', 'SD PICOLO', 'SD PITCH', 'SD QUIK', 'SD RATTLE', 'SD RUDDER', 'SD RUSH', 'SD SEB', 'SD SEPP', 'SD SET', 'SD SOFTI', 'SD TIGHT', 'SD TIN', 'SD TOT', 'SD TRAAP', 'SD TREK', 'SD TRYP', 'SD TUKK', 'SD TUNE', 'SD USEFUL', 'SD XOX', 'SD ZIP', 'SY NOSEX', 'SY TOMMY', 'SY WORM'
+];
+var TableMetal = [
+	'CY BROKEN', 'CY CRASH', 'CY LONG', 'CY METAL', 'CY NOISY', 'CY RIDE', 'CY SILK', 'CY STEEL', 'CY SWORDS', 'CY TECH', 'FX PEWPEW', 'FX SIRO', 'HH 999CL', 'HH BEA', 'HH CLAC', 'HH CLICKY', 'HH CLOSED', 'HH CRYSTL', 'HH CYCLIC', 'HH DM', 'HH DWN', 'HH EASY', 'HH FAXER', 'HH FLICK', 'HH GLASS', 'HH ITALIC', 'HH KNIFE', 'HH KNIVES', 'HH LOOSE', 'HH LOW', 'HH LYNN', 'HH MAYBE', 'HH MEETLE', 'HH MILL', 'HH NOTON', 'HH OZON', 'HH PAMELA', 'HH PICARD', 'HH PING', 'HH REAL', 'HH RIDER', 'HH RINGY', 'HH RLESME', 'HH SCAT', 'HH SHIK', 'HH SHORT', 'HH SHORTY', 'HH SIMP', 'HH SMOL', 'HH SNEP', 'HH SOFTI', 'HH STEO', 'HH STICK', 'HH SWIRL', 'HH TASS', 'HH TICKK', 'HH TIGER', 'HH TIGHTE', 'HH TIN', 'HH TINKR', 'HH TINNY', 'HH TINY', 'HH TSK', 'HH T_RAVE', 'HH UNIT', 'HH VVSMOL', 'HH WAVY', 'HH WISP', 'HH WITELI', 'PC GURKA'
+];
+var TablePerc = [
+	'BD DEEP', 'BD TROMME', 'BD TUFF', 'FX BWAA', 'FX DELAMA', 'FX FATHM', 'FX PHONO', 'FX POING', 'FX RANDR', 'FX SPLASH', 'FX WAVE', 'FX YEAH', 'PC ANALOG', 'PC BLOX', 'PC CAN', 'PC CLAPPY', 'PC CORK', 'PC DAT CO', 'PC DONGA2', 'PC EEK', 'PC FLUTE', 'PC PJONG', 'PC RING', 'PC TIMPR', 'PC TUBE', 'PC UNCRTN', 'PC WONK', 'PC WOODY', 'RS BAS', 'RS BING', 'RS CLASS', 'RS HIQ', 'RS ROLLE', 'RS STEREO', 'SD FLIP', 'SD OWW!', 'SD RELAY', 'SY BELL', 'SY BRKOTO', 'SY BROOD', 'SY FMISH', 'SY HEAVE', 'SY HMBREW', 'SY KODEK', 'SY L_GIRL', 'SY M-BASS', 'SY OH NO', 'SY POM', 'SY RND', 'SY STONE', 'SY WARP', 'SY YAMAN', 'TO BLUM', 'TO COKE', 'TO DEVON', 'TO DISCO', 'TO HONK', 'TO LAYZR', 'TO MID', 'TO SASSY', 'TO SLAPP', 'TO ZETTO'
+];
+var TableTone = [
+	'BD CLICKR', 'BD ELEC02', 'BD ELEC03', 'BD FM PLA', 'BD KODD', 'BD PLAIN', 'BD SMOOTH', 'BD SOFT', 'BD WARBL', 'CP BRITE', 'CY MULTI', 'FX ALAMO', 'FX BELL', 'FX CMD', 'FX GREEN', 'FX LFNOIS', 'FX NOISEL', 'FX PLIP', 'FX REES', 'FX VIDYA', 'FX VUIG', 'FX WELLL', 'HH GRIND', 'HH STTC', 'PC ANGST', 'PC BARB', 'PC CONGR', 'PC G_BELL', 'PC NOISER', 'SD CHIP', 'SD ELEK', 'SD FAP', 'SD FUCK', 'SD NZ', 'SD PERKY', 'SD RAGE', 'SD RUFFFF', 'SD WAX', 'SY 242FBF', 'SY 1000', 'SY ACEED', 'SY ACTER', 'SY ANGER', 'SY ANGRY', 'SY ARBITL', 'SY ARCADE', 'SY AUTOBA', 'SY AVG', 'SY AVIL', 'SY BANGO', 'SY BLING', 'SY BLIPP', 'SY BLIPPA', 'SY BOUW', 'SY BRASH', 'SY BRRD', 'SY BWEOW', 'SY BZZZ', 'SY CALOR', 'SY CANDC', 'SY CERTN', 'SY CUTIE', 'SY CUTOFF', 'SY DIRTY', 'SY DISSON', 'SY DIVER', 'SY DMSTAB', 'SY DOOP', 'SY DOS', 'SY DRROP', 'SY DUBBER', 'SY DXTRON', 'SY EBM86', 'SY EBM87', 'SY EBM88', 'SY EKOBL', 'SY ELECTA', 'SY EXAI', 'SY FENRIS', 'SY FKEVRB', 'SY FLUT', 'SY FLUTTR', 'SY FM RND', 'SY FMBAS', 'SY FROG', 'SY FUNCT', 'SY FURRY', 'SY GAMBOI', 'SY GARG', 'SY GENNY', 'SY GIRLS', 'SY GLAZ', 'SY GLETCH', 'SY GLIPP', 'SY GLOCK', 'SY GUMBO', 'SY HORN', 'SY HVQUIP', 'SY INTRO', 'SY JENI', 'SY JUICE', 'SY KLONK', 'SY LOVBAS', 'SY LOW', 'SY MODSEQ', 'SY MODUS', 'SY MOLY', 'SY MOOG', 'SY MUSIC', 'SY NARP', 'SY NORM', 'SY OBABO', 'SY OLD', 'SY PLAY', 'SY QUIKGL', 'SY RAVE', 'SY RINGS', 'SY RIP', 'SY RKADE', 'SY RRASH', 'SY RUMB', 'SY SEARCH', 'SY SFTPNO', 'SY SHUTTR', 'SY SLOSH', 'SY SPIKES', 'SY SPLESH', 'SY TIEF', 'SY TONK', 'SY TRAXX', 'SY TREP', 'SY TURF', 'SY UPRITE', 'SY UTIL', 'SY VALS', 'SY WINDY', 'SY WOZZO', 'SY WUBS', 'SY WUMP', 'SY XIAN', 'SY YUBS', 'TO PLONC', 'TO SNESO', 
+];
+var TableChord = [
+	'CP GOLF', 'CP PLAUSE', 'FX DROWZY', 'FX GLIDE', 'FX KLANG', 'FX NOSTAB', 'FX SPOOKY', 'FX WIRL', 'PC KALE', 'SY ACBASS', 'SY AGAIN', 'SY AHH', 'SY ALOOF', 'SY ANABAS', 'SY AQUA', 'SY BARBA', 'SY BLEP', 'SY BOAT', 'SY BONOS', 'SY BORD', 'SY BUOY', 'SY CHILL', 'SY CHORDA', 'SY CHUD', 'SY CLEUR', 'SY COVFEF', 'SY CPUS', 'SY CRUD', 'SY DENIA', 'SY DISS', 'SY DISTY', 'SY DNBASS', 'SY DOT', 'SY DUHDI', 'SY EVA000', 'SY FADIN', 'SY FAME', 'SY FANFAR', 'SY FANTA', 'SY FARP', 'SY FLERP', 'SY FRISS', 'SY GANOR', 'SY GEORGE', 'SY GERP', 'SY GOLDIE', 'SY HELLO', 'SY HOUZ', 'SY HYPEMIA', 'SY INUIT', 'SY IO MON', 'SY JANIN', 'SY JON', 'SY JUNO', 'SY KLING', 'SY LURK', 'SY LUSH', 'SY LUSHR', 'SY MIST', 'SY NICE', 'SY OPLGTR', 'SY PATH', 'SY PIANO', 'SY PIZZA', 'SY PRISS', 'SY PUYA', 'SY RADO', 'SY RAVEN', 'SY RISING', 'SY SADBOI', 'SY SWQMIN', 'SY SIMFEL', 'SY SINR8', 'SY SLO', 'SY SLOLOW', 'SY STAAR', 'SY STAB', 'SY STEP', 'SY STRPAD', 'SY SWEEPR', 'SY TABLE', 'SY TRIP', 'SY TROIT', 'SY VETO', 'SY WARPY', 'SY WAVE', 'SY WAVSWE', 'SY WRONG'
+];
+
+var Kick = TableKick[Math.floor(Math.random()*TableKick.length)]; 
+var Snare = TableSnare[Math.floor(Math.random()*TableSnare.length)];
+var Metal = TableMetal[Math.floor(Math.random()*TableMetal.length)];
+var Perc = TablePerc[Math.floor(Math.random()*TablePerc.length)];
+var Tone = TableTone[Math.floor(Math.random()*TableTone.length)];
+var Chord = TableChord[Math.floor(Math.random()*TableChord.length)];
+
+</script>
+ 
 </html>
